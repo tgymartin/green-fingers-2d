@@ -52,7 +52,7 @@ class tempSensor:
             temp_c = float(temp_string) / 1000.0
             return temp_c
 
-class MotorSM(sm.SM): #state machine to 
+class MotorSM(sm.SM): #state machine to control PWM of pump and fan
     startState = 0
     def __init__(self, targetTemperature):
         self.targetTemperature = targetTemperature
