@@ -19,15 +19,16 @@ GPIO.setup(12, GPIO.OUT)
 
 pump = GPIO.PWM(12, frequency)
 fan = GPIO.PWM(13, frequency)
-pump.start(1)
-fan.start(1)
+
 
 
 
 import os
 import glob
 import time
- 
+
+#/sys/bus/w1/devices/28-000008ae29b8/w1_slave
+
 os.system('modprobe w1-gpio')
 os.system('modprobe w1-therm')
  
@@ -54,16 +55,21 @@ def read_temp():
         return temp_c, temp_f
 
 deg_c, deg_f = read_temp()
-	
+sensorValue = deg_c
+
 while True:
 	print(read_temp())	
 	time.sleep(1)
+    
+targetTemperature = 30.0
+pump.start(0.5)
+fan.start(0.5)
 
 class temp_controller(sm.SM):
     
     startState = 0
     def getNextValues(self,state,inp):
-        if sensorValue > target_temperature:
+        if inp > target_temperature:
             return 1, (0.5,0.5)
         else:
             return 0, (0,0)
