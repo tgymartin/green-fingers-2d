@@ -1,0 +1,25 @@
+<menuScreen>:
+	BoxLayout:
+		orientation: 'horizontal'
+		Button:
+			text: 'go to settings'
+			on_press: 
+				root.manager.current = 'settings'
+		Button:
+			text: 'Quit'
+			on_press: root.stop() 
+
+
+
+<settingsScreen>:
+	BoxLayout:
+		orientation: 'horizontal'
+		Label:
+			text: 'Settings'
+		Button:
+			text: 'back to menu'
+			on_press: 
+				root.manager.current = 'menu'
+
+
+
