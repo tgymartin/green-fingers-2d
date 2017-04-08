@@ -1,0 +1,198 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\PassOptionsToPackage{hyphens}{url} % url is loaded by hyperref
+\usepackage[unicode=true]{hyperref}
+\hypersetup{
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{longtable,booktabs}
+% Fix footnotes in tables (requires footnote package)
+\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{long table}}{}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+
+\date{}
+
+\begin{document}
+
+\emph{\textbf{2D Project}}
+
+\emph{\textbf{Systems World}}
+
+\textbf{F06 Team 06}
+
+Dicson Candra Wijaya 1002289
+
+Lau Weng Kei Wenkie 1002219
+
+Phang Li Wen Charlotte 1002277
+
+Mok Jun Neng 1002286
+
+Tan Guan Yuan Martin 1002173
+
+\emph{\textbf{Question 2.}}
+
+\emph{Our group used Excel's matrix multiplication (=MMULT) of the
+entries of error and the k coefficients to get the linear combination of
+calculated v(n) for every order controller.}
+
+\emph{We decided to use minimum chi-square in assessing the goodness of
+fit between the set of calculated values of v(n) and actual values of
+v(n) given in the question.}
+
+\emph{Pearson's Chi-Square Test: }
+
+\(X^{2} = \sum_{i = 1}^{n}\frac{\left( O_{i} - E_{i} \right)^{2}}{E_{i}}\)
+
+\emph{where}
+
+\emph{X\textsuperscript{2} = Pearson's cumulative test statistic}
+
+\emph{O\textsubscript{i} = calculated v(n)}
+
+\emph{E\textsubscript{i} = actual v(n) given}
+
+\emph{n = number of cells in the table}
+
+\emph{A lower X\textsuperscript{2} value indicates that the calculated
+v(n) is closer to the actual v(n) given. Therefore, our objective is to
+minimize the chi-square value (X\textsuperscript{2}) for each order
+controller.}
+
+\emph{Using Excel Solver, we set the chi-square value
+(X\textsuperscript{2}) as the objective function to a minimum and set
+the unknown k coefficients (k\textsubscript{0},
+k\textsubscript{1},\ldots{},k\textsubscript{9}) as the changing
+variable.}
+
+\emph{Result:}
+
+\begin{quote}
+{{[}CHART{]}}
+\end{quote}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+\emph{Order} & \emph{X\textsuperscript{2}}\tabularnewline
+\midrule
+\endhead
+0 & 20.26071659\tabularnewline
+1 & 3.089836451\tabularnewline
+2 & 0.006754156\tabularnewline
+3 & 0.006716346\tabularnewline
+4 & 0.006493217\tabularnewline
+5 & 0.005102069\tabularnewline
+6 & 0.003122692\tabularnewline
+7 & 0.002727727\tabularnewline
+8 & 0.000374947\tabularnewline
+9 & 3.57577E-10\tabularnewline
+\bottomrule
+\end{longtable}
+
+\emph{The next step is to analyze the result obtained. Since 10 data set
+is given, the degree of freedom (N-1) is 9. A chi-square distribution
+with 9 degrees of freedom for a lower one-sided test at significance
+level α = 0.001 (extreme) has a critical value of 1.152.}
+
+\emph{From the table of values, we can see that the minimized chi-square
+values (X\textsuperscript{2}) of 2\textsuperscript{nd} order onwards do
+not exceed this critical value and hence satisfy the condition to be
+considered ``correct''. However, it is also apparent, from the table of
+values and the graph, that X\textsuperscript{2} already approaches 0 at
+2\textsuperscript{nd}order and rate of change of X\textsuperscript{2}
+from 2\textsuperscript{nd} order onwards to the 9\textsuperscript{th}
+order is negligible. }
+
+\emph{Therefore, we conclude that the team from last year's 2D project
+used controller of 2\textsuperscript{nd} order.}
+
+\emph{This approach is still reasonable even if we have more data
+points. In fact, minimized chi-square test becomes more relevant with
+increasing data points. The plot of X\textsuperscript{2} vs order would
+give data points forming the full similarly converging curve. With more
+data points, there is increased precision in assessing the data point
+which chi-square value (X\textsuperscript{2}) first converges to
+approximately 0. Therefore, the chi-square test is a reliable tool for
+assessing the goodness of fit between observed and expected values.}
+
+\emph{The k coefficients in the 2\textsuperscript{nd} order controller
+is:}
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+\emph{k\textsubscript{0}} & 0.107782668\tabularnewline
+\midrule
+\endhead
+\emph{k\textsubscript{1}} & 0.546854887\tabularnewline
+\emph{k\textsubscript{2}} & 0.769143476\tabularnewline
+\bottomrule
+\end{longtable}
+
+\emph{We have observed that the coefficients of k\textsubscript{0} and
+k\textsubscript{1} are the same for 2\textsuperscript{nd} and
+3\textsuperscript{rd} order controller, with a different coefficient of
+k\textsubscript{2} because the 3\textsuperscript{rd} order controller
+has an additional k\textsubscript{3} coefficient. The unchanged values
+of k\textsubscript{0} and k\textsubscript{1} suggest that the
+2\textsuperscript{nd} order controller is indeed sufficient and these k
+coefficients are ``best'' or true.}
+
+\emph{Therefore, we conclude that the sufficient 2\textsuperscript{nd}
+order controller was used and the corresponding k coefficients are
+correct.}
+
+\emph{\emph{Bibliography}}
+
+Appendix C Critical Values for the Chi-Squared Distribution.
+(2015).~\emph{Beyond Basic Statistics,}167-167.
+
+Moore, D. S. (1976).~\emph{Chi-Square Tests}~(No. Mimeograph). PURDUE
+UNIV LAFAYETTE IND DEPT OF STATISTICS.
+
+\end{document}
