@@ -15,7 +15,7 @@
 	\maketitle
 	\section{Derivation}
 	$$T_i - T_{amb} = -R \rho v \frac{dT}{dt}$$
-	$$\int_{0}^{t} dt = -R \rho v \frac{1}{T-T_{amb}} dT$$
+	$$\int_{0}^{t} dt = -R \rho v \int_{T_i}^{T}\frac{1}{T-T_{amb}} dT$$
 	$$\frac{t}{R \rho v} = \ln \left| \frac{T - T_{amb}}{T_i - T_{amb}} \right|$$
 	$$\left( T_i - T_{amb} \right) \exp^{-\frac{t}{\alpha}} = T - T_{amb}$$
 \end{document}
