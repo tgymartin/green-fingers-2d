@@ -15,27 +15,13 @@ from kivy.clock import Clock
 from kivy.uix.slider import Slider
 
 class MotorButton(Button):
-    def __init__(self,**kwargs):
-        Button.__init__(self,**kwargs)
-        self.font_size=20
-        self.halign='left' 
-        self.valign='middle'
-        #self.size_hint=(0.2,0.1)
+    pass
 
 class QuitButton(Button):
-    def __init__(self, **kwargs):
-        Button.__init__(self,**kwargs)
-        self.text='Quit'
-        self.font_size=20
-        self.pos_hint={'right':1,'bottom':0}
-        self.size_hint=(0.2,0.1)
+    pass
 
 class DefaultLabel(Label):
-    def __init__(self, **kwargs):
-        super(DefaultLabel, self).__init__(**kwargs)
-        self.font_size=20
-        self.halign='left' 
-        self.valign='middle'
+    pass
 
 class Empty(Label):
     def __init__(self, **kwargs):
