@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.27)  10 APR 2017 23:48
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.27)  10 APR 2017 23:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -414,7 +414,7 @@ LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
 
--- Lines per column: 54 (approximate, difference = 6.64209pt).
+-- Lines per column: 55 (approximate, difference = 7.17696pt).
 (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count122
@@ -482,15 +482,15 @@ LaTeX Info: Redefining \nameref on input line 15.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(43.36243pt, 510.78302pt, 43.36243pt)
-* v-part:(T,H,B)=(43.36243pt, 758.32199pt, 43.36243pt)
+* h-part:(L,W,R)=(36.135pt, 525.23788pt, 36.135pt)
+* v-part:(T,H,B)=(36.135pt, 772.77686pt, 36.135pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=510.78302pt
-* \textheight=758.32199pt
-* \oddsidemargin=-28.90756pt
-* \evensidemargin=-28.90756pt
-* \topmargin=-61.33157pt
+* \textwidth=525.23788pt
+* \textheight=772.77686pt
+* \oddsidemargin=-36.135pt
+* \evensidemargin=-36.135pt
+* \topmargin=-68.559pt
 * \headheight=12.0pt
 * \headsep=20.42401pt
 * \topskip=13.92pt
@@ -514,9 +514,9 @@ Package caption Info: End \AtBeginDocument code.
 File: algal_samples.png Graphic file (type png)
  <use algal_samples.png>
 Package pdftex.def Info: algal_samples.png used on input line 25.
-(pdftex.def)             Requested size: 250.28648pt x 141.066pt.
+(pdftex.def)             Requested size: 257.36945pt x 145.05739pt.
 
-Overfull \hbox (0.89497pt too wide) in paragraph at lines 25--26
+Overfull \hbox (0.7505pt too wide) in paragraph at lines 25--26
  [] 
  []
 
@@ -536,7 +536,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 34--35
  []
 
 
-Underfull \hbox (badness 1546) in paragraph at lines 36--37
+Underfull \hbox (badness 3568) in paragraph at lines 36--37
 []\OT1/ptm/m/n/12 The spec-tropho-tome-ter re-sults were used to
  []
 
@@ -549,7 +549,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 36--37
 File: spectro_graph.png Graphic file (type png)
  <use spectro_graph.png>
 Package pdftex.def Info: spectro_graph.png used on input line 43.
-(pdftex.def)             Requested size: 245.17366pt x 180.85469pt.
+(pdftex.def)             Requested size: 252.11194pt x 185.97505pt.
 LaTeX Font Info:    Try loading font information for U+msa on input line 53.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -567,9 +567,9 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: growth_curve.png Graphic file (type png)
  <use growth_curve.png>
 Package pdftex.def Info: growth_curve.png used on input line 67.
-(pdftex.def)             Requested size: 250.28648pt x 174.01309pt.
+(pdftex.def)             Requested size: 257.36945pt x 178.93706pt.
 
-Overfull \hbox (0.89497pt too wide) in paragraph at lines 67--68
+Overfull \hbox (0.7505pt too wide) in paragraph at lines 67--68
  [] 
  []
 
@@ -582,23 +582,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 74--75
 
 
  <./algal_samples.png> <./spectro_graph.png> <./growth_curve.png>]
-Underfull \hbox (badness 2941) in paragraph at lines 76--77
-\OT1/ptm/m/n/12 in spec-tropho-tome-ter read-ing val-ues, fol-lowed
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 76--77
 
  []
 
 
-Underfull \hbox (badness 1509) in paragraph at lines 78--80
+Underfull \hbox (badness 2828) in paragraph at lines 78--80
 []\OT1/ptm/m/n/12 Initially, the al-gal cells num-ber in flask B
- []
-
-
-Underfull \hbox (badness 1540) in paragraph at lines 78--80
-\OT1/ptm/m/n/12 lag time pe-riod as pre-dicted by the stan-dard
  []
 
 
@@ -622,8 +612,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 89--90
  []
 
 
-Underfull \hbox (badness 1708) in paragraph at lines 92--93
-\OT1/ptm/m/n/12 al-gae to pho-to-syn-the-sise con-tin-u-ously and
+Underfull \hbox (badness 4713) in paragraph at lines 92--93
+[]\OT1/ptm/m/n/12 Hypothesis: Un-der high in-ten-sity light-ing,
  []
 
 
@@ -632,18 +622,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 92--93
  []
 
 
-Underfull \hbox (badness 2591) in paragraph at lines 93--94
+Underfull \hbox (badness 5331) in paragraph at lines 93--94
 []\OT1/ptm/m/n/12 Observation: Al-gae sam-ple from flask C
  []
 
 
-Underfull \hbox (badness 1946) in paragraph at lines 93--94
+Underfull \hbox (badness 3471) in paragraph at lines 93--94
 \OT1/ptm/m/n/12 changed from a light green colour to a
  []
 
 
-Underfull \hbox (badness 1521) in paragraph at lines 93--94
-\OT1/ptm/m/n/12 spec-tropho-tome-ter read-ings for flask C is
+Underfull \hbox (badness 1852) in paragraph at lines 93--94
+\OT1/ptm/m/n/12 yellow-brown colour. The gen-eral trend of
  []
 
 
@@ -652,13 +642,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 93--94
  []
 
 
-Underfull \hbox (badness 2150) in paragraph at lines 95--96
+Underfull \hbox (badness 2119) in paragraph at lines 95--96
+\OT1/ptm/m/n/12 According to our method-ol-ogy, the higher the
+ []
+
+
+Underfull \hbox (badness 4108) in paragraph at lines 95--96
 \OT1/ptm/m/n/12 ex-per-i-men-tal prin-ci-ple, it means that flask C
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 95--96
 
+ []
+
+
+Underfull \hbox (badness 1406) in paragraph at lines 97--98
+[]\OT1/ptm/m/n/12 First, the change in the colour of the al-gal
+ []
+
+
+Underfull \hbox (badness 1728) in paragraph at lines 97--98
+\OT1/ptm/m/n/12 im-pu-ri-ties, for ex-am-ple, fungi, breed-ing in the
  []
 
 
@@ -682,7 +687,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 108.
 Here is how much of TeX's memory you used:
  8474 strings out of 493014
  131250 string characters out of 6133351
- 229857 words of memory out of 5000000
+ 231849 words of memory out of 5000000
  11906 multiletter control sequences out of 15000+600000
  38333 words of font info for 85 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -693,7 +698,7 @@ live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texli
 ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive
 /2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texm
 f-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "Biology 2D Report 1.pdf" (3 pages, 615558 bytes).
+Output written on "Biology 2D Report 1.pdf" (3 pages, 615576 bytes).
 PDF statistics:
  88 PDF objects out of 1000 (max. 8388607)
  71 compressed objects within 1 object stream
