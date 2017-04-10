@@ -1,0 +1,79 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage[justification=centering, font={small,it}]{caption}
+\author{Dicson Wijaya (1002289), Lau Wenkie (1002219), \\ Mok Jun Neng (1002219), Charlotte Phang (1002277), Martin Tan (1002173)}
+\title{10.012 Introduction to Biology 2D Report 1}
+\begin{document}
+	
+	\maketitle
+	
+	\section{Objectives}
+	This report aims to determine the effect of different environmental factors on algal growth. We subjected the different algal flasks to their respective environment over the period of 3 to 4 weeks and periodically measured the growth using a spectrophotometer.
+	
+	\section{Experiment}
+	\begin{figure}[H]
+		\begin{center}
+			\includegraphics[width=0.5\textwidth]{algal_samples.png}
+			\caption{Algal Samples}
+			\label{fig:algalsamples}
+		\end{center}
+	\end{figure}
+    Culture flask A was cultured while placed on a shaker which ensured the constant mixture of the contents of the flask. \\
+    
+    Culture flask B was cultured in stationary state. \\
+    
+    Culture flask C was cultured while placed in an environment with strong light intensity. \\
+    
+    The spectrophotometer results were used to compare the transmittance and absorbency of 3 algal samples grown under different conditions with a control water. \\
+    
+    The flask with highest algal growth will have the highest transmittance and absorbance.
+    
+    \section{Result and Analysis}
+    \begin{figure}[H]
+    	\begin{center}
+    		\includegraphics[width=0.5\textwidth]{spectro_reading.png}
+    		\caption{Graph of spectrophotometer reading against time in days}
+    		\label{fig:spectroreading}
+    	\end{center}
+    \end{figure}
+	\begin{table}[H]
+		\centering
+		\caption{Spectrophotometer readings}
+		\label{spectroreadings}
+		\small
+		\begin{tabular}{|c|c|c|c|}
+			Number of days & Flask A readings & Flask B readings & Flask C readings \\
+			0              & 0.3645           & 0.3945           & 0.3945           \\
+			3              & 0.8498           & 0.2786           & 0.1741           \\
+			5              & 0.8986           & 0.1634           & 0.2946           \\
+			10             & 0.9948           & 0.7528           & 0.7663           \\
+			12             & 0.7490           & 0.6481           & 0.4836           \\
+			17             & 1.0303           & 0.9359           & 0.8074           \\
+			19             & 0.9964           & 0.9217           & 0.7269          
+		\end{tabular}
+		\normalsize
+	\end{table}
+	\begin{figure}[H]
+		\begin{center}
+			\includegraphics[width=0.5\textwidth]{growth_curve.png}
+			\caption{Standard Algal Growth Curve}
+			\label{growthcurve}
+		\end{center}
+	\end{figure}
+    Comparing Figure 1 and Figure 3: \\
+    
+    For the first 12 days, the curve representing flask A has a similar shape to that of the standard algal growth curve, with an initial exponential increase in spectrophotometer reading values, followed by a stationary period and finally a period of decline, however, without the initial lag period. However, after the 12 day, the number of algal cells decrease for a short period of time, followed by $12^{th}$ another exponential increase and then a slight decrease recorded during the last reading. The increase after day 12 can be attributed to the previous drop in algal cell number. This means that the previous decrease in algal cell numbers have increase the nutrients needed for growth per algae cell, causing an increase in algal cells number. The following decrease can be attributed once again to nutrient level per cell, which in this case has decreased due to a higher cell count sharing the same amount of nutrients. It is expected that cycles of positive growth followed by negative growth will be observed if the experiment is carried out over a longer period of time due to reasons listed above. \\
+    
+    Initially, the algal cells number in both flask B and C experienced a decrease, in contrast to the supposed lag time period as predicted by the standard algae growth curve. Subsequently, for both flasks, an exponential increase in algal numbers was observed followed by a few cycles of increase and decrease. There was no stationary point observed for the results of both flask B and C. \\
+    
+    For all 3 flasks, the algae samples experienced positive growth.
+    
+\end{document}
