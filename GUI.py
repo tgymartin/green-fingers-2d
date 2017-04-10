@@ -1,81 +1,130 @@
-import time
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Apr 08 00:47:33 2017
 
-#kivy dependencies
+@author: Mok Jun Neng
+"""
 from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen, FadeTransition
 from kivy.uix.widget import Widget
 from kivy.uix.button import Button
 from kivy.uix.label import Label
+from kivy.uix.layout import Layout
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.textinput import TextInput
-from kivy.clock import Clock
 from kivy.uix.slider import Slider
+from kivy.uix.progressbar import ProgressBar
+from kivy.uix.textinput import TextInput
+import time
+import sys
+from libdw import sm
+from PID import PID
 
-class MotorButton(Button):
-    pass
 
-class QuitButton(Button):
-    pass
+class output_sm(sm.SM):
+    def __init__(self):
+        self.startState = 0
+        self.motorController = PID(-1,0,-1)
+        self.kick = 1.0        
+        self.kickLambda = 0.01
+        self.kickThreshold = 0.01
+        self.kickTime = 0.1
+        self.currentTime = time.time()
+    
+    def getNextValues(self,state,inp):
+        if state == 0:
+#            motor_power = self.motorController(sys_temp)
+            if motor_power > 0:
+                self.currentTime = time.time()
+                state = 1
+        if state == 1:
+#            controlVal = self.motorController(sys_temp)
+            motor_power = self.kick
+            self.kick = (1-self.kickLambda)*self.kick + self.kickLambda*controlVal
+            if self.kick < (self.kickThreshold + controlVal) or time.time() - self.currentTime > self.kickTime:
+                state = 2
+            else:
+                state = 1
+        if state == 2:
+            motor_power = self.motorController 
 
-class DefaultLabel(Label):
-    pass
-
-class Empty(Label):
-    def __init__(self, **kwargs):
-        super(Empty, self).__init__(**kwargs)
-        self.text = ''
-
-class ControlPanelScreen(Screen):
-    def __init__(self, **kwargs):
-        super(ControlPanelScreen, self).__init__(**kwargs) #initialise the properties of the parent class
-        self.nRows = 6
-        self.layout = GridLayout(cols = 3, rows = self.nRows) #initialise layout
-        self.add_widget(self.layout)
+class PD_ControllerSM(sm.SM):
+    def __init__(self, targtemp):
+        self.startState = 0 
+        self.targtemp = targtemp
+        self.motorOutput = PID(-1,0,-1)
         
+    def getNextValues(self,state,inp):
+        if inp > self.targtemp :
+            self.motorOutput.setpoint = self.targtemp
+            output = self.motorOutput(inp)
+            return 1, output
+        else:
+            return 0,0
 
-        #Motor Controls Row
-        self.layout.add_widget(DefaultLabel(text = 'Motor Control'))
-        self.layout.add_widget(Empty())
-        self.layout.add_widget(Empty())
+class MainLayout(Screen):
+  
+    def __init__(self,**kwargs):
+        Screen.__init__(self,**kwargs)
+#        self.motor_output_power = PID(-1,0,0)
+#        self.fan_output_power = PID(-1,0,0)
+        self.motorController = PD_ControllerSM(self.ids.targtemp_slider.value)
+        self.motorController.start()
+    
+    def motor_output(self):
+        sys_temp = float(self.ids.systemp_slider.value)
+#        targ_temp = float(self.ids.targtemp_slider.value)
+#        self.motor_output_power.setpoint = targ_temp
+        motorOutput = self.motorController.step(sys_temp)
+        self.ids.motorout.text = str(round(motorOutput*100,2))+'%'
+        self.ids.fanout.text = str(round(motorOutput*100,2))+'%'
+        self.ids.motorbar.value = motorOutput*100
         
-        #
-        self.layout.add_widget(DefaultLabel(text = 'Motor Control'))
-        self.layout.add_widget(DefaultLabel(text = '<display power>'))
-        self.layout.add_widget(DefaultLabel(text = '<slider>'))
-
-        # Motor control buttons
-        motorPWMButton = MotorButton(text = 'Auto')
-        motorStartButton = MotorButton(text = 'Manual')
-        motorStopButton = MotorButton(text = 'Stop')
-        self.layout.add_widget(motorPWMButton)
-        self.layout.add_widget(motorStartButton)
-        self.layout.add_widget(motorStopButton)
-
-        self.layout.add_widget(Empty())
-        self.layout.add_widget(Empty())
-        self.layout.add_widget(Empty())
-
-        #Temperature Control
-        self.layout.add_widget(DefaultLabel(text = 'Temperature Settings'))
-        self.layout.add_widget(Empty())
-        self.layout.add_widget(Empty())
-
-        self.layout.add_widget(DefaultLabel(text = 'Set Temperature'))
-        self.layout.add_widget(DefaultLabel(text = '<display set temp>'))
-        self.layout.add_widget(DefaultLabel(text = '<set temp slider>'))
-
+    def on_touch_move(self,touch):
+        self.motor_output()
         
-class TwoDApp(App):
+    def on_touch_up(self,touch):
+        self.motor_output()
+        
+        
+    
+    def motorandfan_output(self):
+#        print float(self.ids.systemp.text)
+#        print float(self.ids.targtemp.text)
+        sys_temp = float(self.ids.systemp_slider.value)
+        targ_temp = float(self.ids.targtemp_slider.value)
+        self.motor_output_power.setpoint = targ_temp
+        self.fan_output_power.setpoint = targ_temp
+        motorOutput = self.motor_output_power(sys_temp)
+        self.ids.motorout.text = str(round(motorOutput,3))
+    
+        fanOutput = self.fan_output_power(sys_temp)
+        self.ids.fanout.text = str(round(fanOutput,3))
+    
+        
+#        print motorOutput
+#        print fanOutput
+        
+    
+#class FloatInput(TextInput):
+#
+#    pat = re.compile('[^0-9]')
+#    def insert_text(self, substring, from_undo=False):
+#        pat = self.pat
+#        if '.' in self.text:
+#            s = re.sub(pat, '', substring)
+#        else:
+#            s = '.'.join([re.sub(pat, '', s) for s in substring.split('.', 1)])
+#        return super(FloatInput, self).insert_text(s, from_undo=from_undo)
+    pass
+        
+class MotorControllerApp(App):
     def build(self):
-        sm = ScreenManager(transition=FadeTransition())
-        ctrlpanel = ControlPanelScreen(name = 'Control Panel')
-        sm.add_widget(ctrlpanel)
-        sm.current = 'Control Panel'
-        return sm
-
-
-if __name__== '__main__':
-    TwoDApp().run()
+        return MainLayout()
+    
+if __name__=='__main__':
+    MotorControllerApp().run()
+    

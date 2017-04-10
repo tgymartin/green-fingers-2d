@@ -14,7 +14,7 @@ class PID(object): #needs import time
         self.min_output = min_output
         self.max_output = max_output
         self.prevError = 0
-        self.prevTime = time.time()
+        self.prevTime = time.time()-0.001
         self.clamped = False
         
         self.derivIdx = 0
