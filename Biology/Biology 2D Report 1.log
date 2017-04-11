@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.27)  10 APR 2017 23:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.27)  11 APR 2017 13:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -520,31 +520,6 @@ Overfull \hbox (0.7505pt too wide) in paragraph at lines 25--26
  [] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 30--31
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 32--33
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 34--35
-
- []
-
-
-Underfull \hbox (badness 3568) in paragraph at lines 36--37
-[]\OT1/ptm/m/n/12 The spec-tropho-tome-ter re-sults were used to
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 36--37
-
- []
-
 <spectro_graph.png, id=34, 350.7504pt x 258.7266pt>
 File: spectro_graph.png Graphic file (type png)
  <use spectro_graph.png>
@@ -698,7 +673,7 @@ live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texli
 ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive
 /2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texm
 f-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "Biology 2D Report 1.pdf" (3 pages, 615576 bytes).
+Output written on "Biology 2D Report 1.pdf" (3 pages, 615600 bytes).
 PDF statistics:
  88 PDF objects out of 1000 (max. 8388607)
  71 compressed objects within 1 object stream
