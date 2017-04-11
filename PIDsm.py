@@ -1,4 +1,5 @@
 from libdw import sm
+import time
 
 class PID_ControllerSM(sm.SM):
     def __init__(self, targTemp, Kp, Ki, Kd):
@@ -16,16 +17,6 @@ class PID_ControllerSM(sm.SM):
 
         self.kickTime = 0.1 #seconds
     
-#state [0] is state num 0 = off, 1 = kick, 2 = on
-#state1
-    #0 is prev err, 
-    #1 is prev time
-    #2 is I value
-#state 3 is kick start time
-
-#output
-# 0 is pump PWM from 1 to 100
-# 1 is fan pwm from 1 to 100
 
     def getNextValues(self, state, inp):
         PIDlist = self.PID(state[1], inp) #PIDlist is (outputPWM, [error, currTime, Ival, 0])
@@ -76,3 +67,15 @@ class PID_ControllerSM(sm.SM):
             outputPWM = self.pumpMinPWM
         
         return (outputPWM, [error, currTime, Ival]) #return the PID value
+
+
+#state [0] is state num 0 = off, 1 = kick, 2 = on
+#state1
+    #0 is prev err, 
+    #1 is prev time
+    #2 is I value
+#state 3 is kick start time
+
+#output
+# 0 is pump PWM from 1 to 100
+# 1 is fan pwm from 1 to 100

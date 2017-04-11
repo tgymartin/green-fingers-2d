@@ -24,7 +24,7 @@ class MainLayout(Screen):
     #    self.motor_output_power = PID_ControllerSM(-1,0,0)
     #    self.fan_output_power = PID_ControllerSM(-1,0,0)
         
-        self.motorController = PID_ControllerSM(self.targTemp,10,0,0)
+        self.motorController = PID_ControllerSM(30,10,0,0)
         self.motorController.start()
     
     def motor_output(self):
