@@ -2,8 +2,8 @@ This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**"Biology 2D Report 1.tex"
-(./Biology 2D Report 1.tex
+**"Biology 2D Report 2.tex"
+(./Biology 2D Report 2.tex
 LaTeX2e <2016/03/31>
 Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/IEEEtran/IEEEtran.cls
@@ -25,13 +25,18 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 -- Using 210mm x 297mm (a4) paper.
 -- Using PDF output.
 \@IEEEnormalsizeunitybaselineskip=\dimen105
--- This is a 12 point document.
+-- This is a 10 point document.
 \CLASSINFOnormalsizebaselineskip=\dimen106
 \CLASSINFOnormalsizeunitybaselineskip=\dimen107
 \IEEEnormaljot=\dimen108
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <6> not available
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
@@ -49,24 +54,24 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
 
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
 
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14> not available
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <14> not available
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <17> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
-
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <22> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <22> not available
 (Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
@@ -396,8 +401,13 @@ ference \hbox to\hsize {\normalfont \footnotesize \hfil \box \@tempboxa \hfil }
 \c@ContinuedFloat=\count121
 Package caption Info: float package is loaded.
 Package caption Info: hyperref package is loaded.
-) (./Biology 2D Report 1.aux)
-\openout1 = `"Biology 2D Report 1.aux"'.
+)
+
+LaTeX Warning: Unused global option(s):
+    [11.5pt].
+
+(./Biology 2D Report 2.aux)
+\openout1 = `"Biology 2D Report 2.aux"'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
@@ -414,7 +424,7 @@ LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
 
--- Lines per column: 55 (approximate, difference = 7.17696pt).
+-- Lines per column: 67 (approximate, difference = 4.91187pt).
 (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count122
@@ -469,9 +479,9 @@ LaTeX Info: Redefining \ref on input line 15.
 LaTeX Info: Redefining \pageref on input line 15.
 LaTeX Info: Redefining \nameref on input line 15.
 
-(./Biology 2D Report 1.out) (./Biology 2D Report 1.out)
+(./Biology 2D Report 2.out) (./Biology 2D Report 2.out)
 \@outlinefile=\write3
-\openout3 = `"Biology 2D Report 1.out"'.
+\openout3 = `"Biology 2D Report 2.out"'.
 
 
 *geometry* driver: auto-detecting
@@ -482,23 +492,23 @@ LaTeX Info: Redefining \nameref on input line 15.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(36.135pt, 525.23788pt, 36.135pt)
-* v-part:(T,H,B)=(36.135pt, 772.77686pt, 36.135pt)
+* h-part:(L,W,R)=(18.06749pt, 561.3729pt, 18.06749pt)
+* v-part:(T,H,B)=(18.06749pt, 808.91187pt, 18.06749pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=525.23788pt
-* \textheight=772.77686pt
-* \oddsidemargin=-36.135pt
-* \evensidemargin=-36.135pt
-* \topmargin=-68.559pt
+* \textwidth=561.3729pt
+* \textheight=808.91187pt
+* \oddsidemargin=-54.2025pt
+* \evensidemargin=-54.2025pt
+* \topmargin=-87.5445pt
 * \headheight=12.0pt
-* \headsep=20.42401pt
-* \topskip=13.92pt
-* \footskip=51.58043pt
+* \headsep=21.342pt
+* \topskip=12.0pt
+* \footskip=50.84616pt
 * \marginparwidth=20.0pt
 * \marginparsep=10.0pt
 * \columnsep=12.0pt
-* \skip\footins=12.52791pt plus 5.5679pt minus 2.78395pt
+* \skip\footins=10.79993pt plus 4.79993pt minus 2.39996pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -510,42 +520,68 @@ LaTeX Info: Redefining \nameref on input line 15.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-<algal_samples.png, id=32, 325.6968pt x 183.5658pt>
-File: algal_samples.png Graphic file (type png)
- <use algal_samples.png>
-Package pdftex.def Info: algal_samples.png used on input line 25.
-(pdftex.def)             Requested size: 257.36945pt x 145.05739pt.
+<lipid.png, id=20, 362.3136pt x 220.6644pt>
+File: lipid.png Graphic file (type png)
+ <use lipid.png>
+Package pdftex.def Info: lipid.png used on input line 25.
+(pdftex.def)             Requested size: 275.07579pt x 167.53159pt.
 
-Overfull \hbox (0.7505pt too wide) in paragraph at lines 25--26
- [] 
+Underfull \hbox (badness 10000) in paragraph at lines 29--30
+
  []
 
-<spectro_graph.png, id=34, 350.7504pt x 258.7266pt>
-File: spectro_graph.png Graphic file (type png)
- <use spectro_graph.png>
-Package pdftex.def Info: spectro_graph.png used on input line 43.
-(pdftex.def)             Requested size: 252.11194pt x 185.97505pt.
-LaTeX Font Info:    Try loading font information for U+msa on input line 53.
+<report2_table.png, id=22, 323.40825pt x 121.05225pt>
+File: report2_table.png Graphic file (type png)
+ <use report2_table.png>
+Package pdftex.def Info: report2_table.png used on input line 34.
+(pdftex.def)             Requested size: 275.07579pt x 102.96138pt.
+LaTeX Font Info:    Try loading font information for U+msa on input line 45.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 53.
+LaTeX Font Info:    Try loading font information for U+msb on input line 45.
 
 (/usr/local/texlive/2016/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \hbox (badness 10000) in paragraph at lines 56--57
+
+ []
 
 
-<growth_curve.png, id=35, 252.945pt x 175.857pt>
-File: growth_curve.png Graphic file (type png)
- <use growth_curve.png>
-Package pdftex.def Info: growth_curve.png used on input line 67.
-(pdftex.def)             Requested size: 257.36945pt x 178.93706pt.
+Underfull \hbox (badness 10000) in paragraph at lines 60--61
 
-Overfull \hbox (0.7505pt too wide) in paragraph at lines 67--68
- [] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 62--63
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 64--65
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 66--67
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 68--69
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 70--71
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 72--73
+
  []
 
 
@@ -553,120 +589,56 @@ Underfull \hbox (badness 10000) in paragraph at lines 74--75
 
  []
 
-[1{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
-
- <./algal_samples.png> <./spectro_graph.png> <./growth_curve.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 76--77
 
  []
 
 
-Underfull \hbox (badness 2150) in paragraph at lines 78--80
-[]\OT1/ptm/m/n/12 Initially, the al-gal cells num-ber in Flask B
+Underfull \hbox (badness 1577) in paragraph at lines 78--79
+[]\OT1/ptm/m/n/10 Different strains of al-gae re-quire dif-fer-ent con-di-tions
+ (e.g.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 78--80
+Underfull \hbox (badness 10000) in paragraph at lines 78--79
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 81--82
-
- []
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 87.
+[1{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 83--85
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 89--90
-
- []
-
-
-Underfull \hbox (badness 2285) in paragraph at lines 92--93
-\OT1/ptm/m/n/12 growth will in-crease. Since al-gae con-tains
- []
-
-
-Underfull \hbox (badness 1675) in paragraph at lines 92--93
-\OT1/ptm/m/n/12 high in-ten-sity light-ing al-lows the al-gae to
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 92--93
-
- []
-
-
-Underfull \hbox (badness 3907) in paragraph at lines 93--94
-[]\OT1/ptm/m/n/12 Observation: Al-gae sam-ple from Flask C
- []
-
-
-Underfull \hbox (badness 3471) in paragraph at lines 93--94
-\OT1/ptm/m/n/12 changed from a light green colour to a
- []
-
-
-Underfull \hbox (badness 3701) in paragraph at lines 93--94
-\OT1/ptm/m/n/12 yellowish-brown colour. The gen-eral trend
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 93--94
-
- []
-
-
-Underfull \hbox (badness 2119) in paragraph at lines 95--96
-\OT1/ptm/m/n/12 According to our method-ol-ogy, the higher the
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 95--96
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 97--98
-
- []
-
-[2]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 108.
- [3
-
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 108.
- (./Biology 2D Report 1.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 108.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 108.
-Package rerunfilecheck Info: File `"Biology 2D Report 1".out' has not changed.
-(rerunfilecheck)             Checksum: C2CA6F5CE6713576BE9C9DFDE4E8A3FF;367.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 108.
+ <./lipid.png> <./report2_table.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 87.
+ (./Biology 2D Report 2.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 87.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 87.
+Package rerunfilecheck Info: File `"Biology 2D Report 2".out' has not changed.
+(rerunfilecheck)             Checksum: 9B0A652F2DB792C814AEE341CE417E9C;197.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 87.
  ) 
 Here is how much of TeX's memory you used:
- 8474 strings out of 493014
- 131250 string characters out of 6133351
- 231849 words of memory out of 5000000
- 11906 multiletter control sequences out of 15000+600000
- 38333 words of font info for 85 fonts, out of 8000000 for 9000
+ 8454 strings out of 493014
+ 130947 string characters out of 6133351
+ 231855 words of memory out of 5000000
+ 11898 multiletter control sequences out of 15000+600000
+ 36681 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,7n,39p,1306b,334s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,8n,39p,571b,330s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2016/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/tex
-live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texli
-ve/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive
-/2016/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texm
-f-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on "Biology 2D Report 1.pdf" (3 pages, 615331 bytes).
+exlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/te
+xlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texl
+ive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texliv
+e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2
+016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/20
+16/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016
+/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2016/texmf-dis
+t/fonts/type1/urw/times/utmri8a.pfb>
+Output written on "Biology 2D Report 2.pdf" (1 page, 109400 bytes).
 PDF statistics:
- 88 PDF objects out of 1000 (max. 8388607)
- 71 compressed objects within 1 object stream
- 18 named destinations out of 1000 (max. 500000)
- 72 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 74 PDF objects out of 1000 (max. 8388607)
+ 59 compressed objects within 1 object stream
+ 11 named destinations out of 1000 (max. 500000)
+ 43 words of extra memory for PDF output out of 10000 (max. 10000000)
 
