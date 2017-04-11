@@ -13,6 +13,8 @@ import random
 #turn weather on or off
 weatherSwitch = True
 
+timeStep = 1
+
 
 class System:
     def __init__(self,env):
@@ -21,6 +23,14 @@ class System:
         self.mass_water = 40
         #heat capacity of water, units is J/g/celcius
         self.C_of_water = 4.18
+        
+        self.currAmbientTemp = 27.185455348
+
+    def ambientTemperature(self, env):
+        while True:
+            x = (env.now/3600.0)%24
+            self.currAmbientTemp = 0.000058707*x**5 - 0.002951056*x**4 + 0.044551538*x**3 - 0.170349946*x**2 - 0.149160703*x + 27.185455348
+        
         
 #    def runtime(self,env):
 #        while True:
@@ -44,9 +54,9 @@ class SolarPower:
             try:
                 # print System.sys_temperature.level
                 yield System.sys_temperature.put(temp_change)
-                yield env.timeout(1)
+                yield env.timeout(timeStep)
             except ValueError:
-                yield env.timeout(1)
+                yield env.timeout(timeStep)
             
 
 class AmbientTemperature:
@@ -66,7 +76,7 @@ class AmbientTemperature:
         self.currWindSpeed = 1.0 #meters per second
         self.windVariance = 1.0
 
-    def heat_exchange_with_surrounding(self,env):
+    def heat_exchange_with_surrounding(self,env, fanPWM = 100):
         while True:
             self.time = float(env.now)/3600
             #simplified model of ambient temperature in one day
@@ -81,13 +91,12 @@ class AmbientTemperature:
             if temp_change > 0:
                 # print System.sys_temperature.level
                 yield System.sys_temperature.get(temp_change)
-                yield env.timeout(1)
+                yield env.timeout(timeStep)
         
-            else:
-                temp_change = abs(temp_change)
+            elif temp_change < 0:
                 # print System.sys_temperature.level
-                yield System.sys_temperature.put(temp_change)
-                yield env.timeout(1)
+                yield System.sys_temperature.put(-temp_change)
+                yield env.timeout(timeStep)
 
     def windSpeed(self, timeofday): #source: http://www.wind-power-program.com/wind_statistics.htm
         self.currWindSpeed += (random.random() - 0.5) * 2 * self.windVariance * random.weibullvariate(1, 0.5 + random.random())
@@ -105,10 +114,21 @@ class AmbientTemperature:
         return coeff
 
 class HeatExchanger:
-    def __init__(self, ):
+    def __init__(self, env):
         pass
     
-    def
+    def heatExchangerQ(self, env, pumpPWM = 100):
+        while True:
+
+            if temp_change > 0:
+                # print System.sys_temperature.level
+                yield System.sys_temperature.get(temp_change)
+                yield env.timeout(timeStep)
+        
+            elif temp_change < 0:
+                # print System.sys_temperature.level
+                yield System.sys_temperature.put(-temp_change)
+                yield env.timeout(timeStep)
         
 
         
