@@ -1,3 +1,11 @@
+######BUTTONS######
+
+<MinusButton@Button>
+    background_color: [1, 0, 0, 1]
+
+<PlusButton@Button>
+    background_color: [0, 1, 0, 1]
+
 <TemperatureLabel@Label>:
     font_size: 20
     halign: 'center'
@@ -9,14 +17,19 @@
     halign: 'center'
     valign: 'middle'
     
-<SetButton@Button>:
-    font_size: 25
-    halign: 'center'
-    valign: 'middle'
-    
 <EmptyLabel@Label>:
     font_size: 20
     halign: 'center'
+    valign: 'middle'
+
+<StandardLabel@Label>:
+    font_size: 20
+    halign: 'center'
+    valign: 'middle'
+
+<Title@Label>:
+    font_size: 30
+    halign: 'left'
     valign: 'middle'
 
 <MotorOutput@Label>
@@ -30,53 +43,95 @@
     valign: 'middle'
 
 <MainLayout>:
-
     BoxLayout:
         orientation: "vertical"
-        #Target Temperature Row
+        
+        #Temperatures Section
         BoxLayout:
-            orientation: 'horizontal'
+            orientation: "vertical"
+
+            Title:
+                text: "Temperature"
+
             BoxLayout:
-                orientation: 'vertical'
+                orientation: 'horizontal'
+
                 TemperatureLabel:
-                    text: "Target Temp."
-                EmptyLabel:
-#                    on_text_validate:
-                    id: targtemp
-                    text: str(targtemp_slider.value_normalized)
-                    text: str(targtemp_slider.value)
-                         
-            Slider:
-                min: 25
-                max: 35
-                value_normalized: 0.5
-                step: 0.01
-                id: targtemp_slider
-                on_touch_move: 
-                on_touch_up:
-           
-        #System Temperature Row
-        BoxLayout:
-            orientation: 'horizontal'
+                    size_hint: (0.45, 1)
+                    text: "Target Temperature"
+    
+                BoxLayout:
+                    orientation: 'vertical'
+                    
+                    BoxLayout:
+                        orientation: "horizontal"
+
+                        MinusButton:
+                            text: "-"
+                            on_press: targtemp_slider.value -= 0.1
+
+                        StandardLabel:
+        #                    on_text_validate:
+                            id: targtemp
+                            text: str(targtemp_slider.value_normalized)
+                            text: str(targtemp_slider.value)
+
+                        PlusButton:
+                            text: "+"
+                            on_press: targtemp_slider.value += 0.1
+                    Slider:
+                        min: 25
+                        max: 35
+                        value_normalized: 0.5
+                        step: 0.01
+                        id: targtemp_slider
+                        on_touch_move: root.motor_output()
+                        on_touch_up: root.motor_output()
+            
+            #System Temperature Row
+            
             BoxLayout:
-                orientation: 'vertical'
+                orientation: 'horizontal'
+
                 TemperatureLabel:
-                    text: "System Temp."
-                EmptyLabel:
-                    id: systemp
-                    text: str(systemp_slider.value_normalized)
-                    text: str(systemp_slider.value)           
-            Slider:
-                min: 25
-                max: 45
-                value_normalized: 0.5
-                step: 0.01
-                id: systemp_slider
-                on_touch_move:
-                on_touch_up:
+                    size_hint: (0.45, 1)
+                    text: "Current Temperature"
+                    
+                BoxLayout:
+                    orientation: 'vertical'
+                    
+                    BoxLayout:
+                        orientation: "horizontal"
+
+                        MinusButton:
+                            text: "-"
+                            on_press: systemp_slider.value -= 0.1
+
+                        StandardLabel:
+                            id: systemp
+                            text: str(systemp_slider.value_normalized)
+                            text: str(systemp_slider.value)
+
+                        PlusButton:
+                            text: "+"
+                            on_press: systemp_slider.value += 0.1
+
+                    Slider:
+                        min: 25
+                        max: 45
+                        value_normalized: 0.5
+                        step: 0.01
+                        id: systemp_slider
+                        on_touch_move: root.motor_output()
+                        on_touch_up: root.motor_output()
            
         BoxLayout:
-            orientation: 'horizontal'
+            orientation: 'vertical'
+
+            Title:
+                text: "Controller Output"
+                halign: "left"
+
             GridLayout:
                 cols: 2
                 MotorOutput:
@@ -89,6 +144,11 @@
                 FanOutput:
 #                    text: str(root.motorandfan_output)
                     id: fanout
-        ProgressBar:
-            id: motorbar
+            BoxLayout:
+                orientation: "horizontal"
+
+                ProgressBar:
+                    id: motorbar
+                ProgressBar:
+                    id: fanbar
                 
