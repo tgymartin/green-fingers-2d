@@ -25,33 +25,33 @@ import sys
 from libdw import sm
 
 
-
-class output_sm(sm.SM):
-    def __init__(self):
-        self.startState = 0
-        self.motorController = PID(-1,0,-1)
-        self.kick = 1.0        
-        self.kickLambda = 0.01
-        self.kickThreshold = 0.01
-        self.kickTime = 0.1
-        self.currentTime = time.time()
-    
-    def getNextValues(self,state,inp):
-        if state == 0:
-#            motor_power = self.motorController(sys_temp)
-            if motor_power > 0:
-                self.currentTime = time.time()
-                state = 1
-        if state == 1:
-#            controlVal = self.motorController(sys_temp)
-            motor_power = self.kick
-            self.kick = (1-self.kickLambda)*self.kick + self.kickLambda*controlVal
-            if self.kick < (self.kickThreshold + controlVal) or time.time() - self.currentTime > self.kickTime:
-                state = 2
-            else:
-                state = 1
-        if state == 2:
-            motor_power = self.motorController 
+#Real Implementation
+#class output_sm(sm.SM):
+#    def __init__(self):
+#        self.startState = 0
+#        self.motorController = PID(-1,0,-1)
+#        self.kick = 1.0        
+#        self.kickLambda = 0.01
+#        self.kickThreshold = 0.01
+#        self.kickTime = 0.1
+#        self.currentTime = time.time()
+#    
+#    def getNextValues(self,state,inp):
+#        if state == 0:
+##            motor_power = self.motorController(sys_temp)
+#            if motor_power > 0:
+#                self.currentTime = time.time()
+#                state = 1
+#        if state == 1:
+##            controlVal = self.motorController(sys_temp)
+#            motor_power = self.kick
+#            self.kick = (1-self.kickLambda)*self.kick + self.kickLambda*controlVal
+#            if self.kick < (self.kickThreshold + controlVal) or time.time() - self.currentTime > self.kickTime:
+#                state = 2
+#            else:
+#                state = 1
+#        if state == 2:
+#            motor_power = self.motorController 
             
             
         
