@@ -8,6 +8,10 @@ import time
 import simpy
 import math as m
 import matplotlib.pyplot as plt
+import random
+
+#turn weather on or off
+weatherSwitch = True
 
 
 class System:
@@ -29,51 +33,84 @@ class SolarPower:
         self.surface_area = 14.69*10**-4
         
         
-    def solar_pOut(self,env):
+    def solar_pOut(self, env):
         
         while True:
             self.time = int(env.now)/3600
             self.irradiance = (-0.000872*self.time**4 + 0.041849*self.time**2  + 6.038294*self.time - 17.125885)*1000
+            if self.irradiance <= 0:
+                self.irradiance = 0
             temp_change = self.irradiance*self.surface_area/(System.mass_water*System.C_of_water)
             try:
-                print System.sys_temperature.level  
+                # print System.sys_temperature.level
                 yield System.sys_temperature.put(temp_change)
                 yield env.timeout(1)
             except ValueError:
                 yield env.timeout(1)
             
-        
 
 class AmbientTemperature:
-    def __init__(self,env):
+    def __init__(self, env):
         #units: W/m^2.K
         self.ambientQ = env.process(self.heat_exchange_with_surrounding(env))
         self.heat_transfer_coefficient = 5
         #units: m^2
         self.heat_transfer_area = 14.69*10**-4
         self.temp_ambient = 25
-#        -2*m.cos(t*m.pi/12)+29
-        
-    
+
+        #Fan Parameters
+        self.fanMaxAirSpeed = 0.5 #meters per second
+        self.fanMinPWM = 30 #percent
+
+        #Wind
+        self.currWindSpeed = 1.0 #meters per second
+        self.windVariance = 1.0
+
     def heat_exchange_with_surrounding(self,env):
         while True:
-            self.time = int(env.now)/3600
+            self.time = float(env.now)/3600
             #simplified model of ambient temperature in one day
             self.temp_ambient = -2*m.cos(self.time*m.pi/12)+29
             current_temp = System.sys_temperature.level
     #        print 'Temperature due to heat exchange with surrounding: %d'%(current_temp)
-            heat_exchange = self.heat_transfer_coefficient*self.heat_transfer_area*(current_temp - self.temp_ambient)
-            temp_change = heat_exchange/(System.mass_water*System.C_of_water)
+            totalWind = self.fanAirSpeed(fanPWM) ################################################################          INPUT FOR FAN PWM, 0 to 100  ###
+            if weatherSwitch == True:
+                totalWind += self.windSpeed
+            heat_exchange = self.convectionCoeff(totalWind) * self.heat_transfer_area * (current_temp - self.temp_ambient)
+            temp_change = heat_exchange / (System.mass_water * System.C_of_water)
             if temp_change > 0:
-                print System.sys_temperature.level
+                # print System.sys_temperature.level
                 yield System.sys_temperature.get(temp_change)
                 yield env.timeout(1)
         
             else:
                 temp_change = abs(temp_change)
-                print System.sys_temperature.level
+                # print System.sys_temperature.level
                 yield System.sys_temperature.put(temp_change)
                 yield env.timeout(1)
+
+    def windSpeed(self, timeofday): #source: http://www.wind-power-program.com/wind_statistics.htm
+        self.currWindSpeed += (random.random() - 0.5) * 2 * self.windVariance * random.weibullvariate(1, 0.5 + random.random())
+        return self.currWindSpeed
+    
+    def fanAirSpeed(self, fanPWM):
+        if fanPWM > self.fanMinPWM:
+            airSpeed = self.fanMaxAirSpeed * (fanPWM - self.fanMinPWM)/(100.0 - self.fanMinPWM)
+        else:
+            airSpeed = 0.0
+        return airSpeed
+    
+    def convectionCoeff(self, totalAirSpeed): #source: http://www.engineeringtoolbox.com/convective-heat-transfer-d_430.html
+        coeff = 10.45 - totalAirSpeed + 10 * (totalAirSpeed)**0.5
+        return coeff
+
+class HeatExchanger:
+    def __init__(self, ):
+        pass
+    
+    def
+        
+
         
         
 #class MotorOutpt:
@@ -87,7 +124,7 @@ env = simpy.rt.RealtimeEnvironment(factor=0.01, strict = False)
 System = System(env)
 SolarPower = SolarPower(env)
 AmbientTemperature = AmbientTemperature(env)
-env.run()
+env.run(until = 3*3600)
 
 plt.plot(c.x, c.y, 'r-')
 plt.axis([0,0,0,0])

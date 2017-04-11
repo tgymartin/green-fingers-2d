@@ -49,6 +49,12 @@
         #Temperatures Section
         BoxLayout:
             orientation: "vertical"
+            canvas:
+                Color:
+                    rgb: 0.5, 0.5, 0.5, 1
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
 
             Title:
                 text: "Temperature"
