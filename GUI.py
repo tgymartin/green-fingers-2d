@@ -1,4 +1,3 @@
-
 from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen, FadeTransition
@@ -101,8 +100,7 @@ class MainLayout(Screen):
     
     
 class PID(object): #needs import time
-    def __init__(self, Kp = 1, Ki = 0, Kd = 0, min_output = 0, max_output = 1, integrator_min = -sys.maxint, integrator_max = sys.maxint,  derivativeN = 5, backCalc = False, backCalcCoeff = 0.0):
-        print 'linwei is a nutter'
+    def __init__(self, Kp = 1, Ki = 0, Kd = 0, min_output = 0, max_output = 1, integrator_min = -sys.maxint, integrator_max = sys.maxint,  derivativeN = 1, backCalc = False, backCalcCoeff = 0.0):
         self.Kp = Kp #Proportional constant
         self.Ki = Ki #Integral Constant
         self.Kd = Kd #Derivative Constant
@@ -131,6 +129,8 @@ class PID(object): #needs import time
         #calculate dt = time since previous output measurement
         timeNow = time.time() #get the time once to prevent waiting for execution time
         dt = timeNow - self.prevTime
+        if dt == 0:
+            dt = 0.0001 #do not allow division by zero
         self.prevTime = timeNow #save current time as previous time for next reading
         
         #calculate error and P value
@@ -139,7 +139,6 @@ class PID(object): #needs import time
         
         # clamp the I value
         if self.clamped == False:
-            print 'integrating'
             self.I_val += self.Ki * error * dt
 
             if self.I_val > self.integrator_max:
@@ -153,7 +152,6 @@ class PID(object): #needs import time
         
         self.derivVals[self.derivIdx] = (error - self.prevError) / dt
         self.D_val = self.Kd * sum(self.derivVals)/float(self.derivN)
-        print error - self.prevError
         self.derivIdx = (self.derivIdx + 1) % self.derivN #advance the index of the list
         self.prevError = error
 
@@ -183,7 +181,7 @@ class PD_ControllerSM(sm.SM):
     def __init__(self, targtemp):
         self.startState = 0 
         self.targtemp = targtemp
-        self.motorOutput = PID(-1,0,-1)
+        self.motorOutput = PID(-1,-0.01,-0.2)
         
     def getNextValues(self,state,inp):
         if inp > self.targtemp :
