@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 
 '''
 2D Group Members:
@@ -53,7 +54,6 @@ class tempSensor:
             return temp_c
 
 
-
 #Set up global variables
 GPIO.setmode(GPIO.BCM) #use BCM pin numbering system
 GPIO.setup(tempPin, GPIO.IN, GPIO.PUD_UP) #set up the 1 wire interface
@@ -70,7 +70,7 @@ fan.start(0.0)
 targetTemperature = raw_input('Please key in your desired target temperature: ')
 motorController = PID_ControllerSM(float(targetTemperature),30,0,10)
 motorController.start()
-fanController = PID_ControllerSM(float(targetTemperature),30,0,10)
+fanController = PID_ControllerSM(float(targetTemperature),50,0,5)
 fanController.start()
 
 #create sensor object
@@ -84,7 +84,6 @@ def main(): #main code to loop indefinitely here
     fanOutput = fanController.step(currentTemp)
     pump.ChangeDutyCycle(motorOutput) #output the pump PWM. ChangeDutyCycle takes a value from 0 to 100%
     fan.ChangeDutyCycle(fanOutput) #output the fan PWM
-    time.sleep(0.2) #prevent the code from updating too fast
 
 #####################################################################################
 ### Run the main code unless user terminates using Ctrl+C.                        ###

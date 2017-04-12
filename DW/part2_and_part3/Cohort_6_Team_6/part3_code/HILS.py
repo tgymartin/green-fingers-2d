@@ -1,15 +1,8 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Mon Apr 10 19:58:35 2017
-
-@author: Mok Jun Neng
-"""
 import time
 import simpy
 import math as m
 import matplotlib.pyplot as plt
 import random
-#from PIDsm import PID_ControllerSM
 import zmq
 
 #turn weather on or off
@@ -21,18 +14,19 @@ ambientTempPlot = [list(), list()]
 solarPlot = [list(), list()]
 containerPlot = [list(), list()]
 
-
+#Class that initializes a container as shared resources in the environment 
+#Shared resource is temperature which relates to the energy of the system
+#The processe which always increase the temperature of the system is solar radiation, while the processes which can either increase or decrease the temperature of the
+#system are heat convection through air and heat exchange through the heat exchanger
 class System:
     def __init__(self,env):
         self.sys_temperature = simpy.Container(env, init=30, capacity=1000)
-        #mass of water in g
-        self.mass_water = 40
-        #heat capacity of water, units is J/g/celcius
-        self.C_of_water = 4.18
+        self.mass_water = 40 #grams
+        self.C_of_water = 4.18 #J g^-1 K^-1
         self.mc = self.mass_water * self.C_of_water
         self.targetTemperature = 30
-        
 
+#Modelled ambient temperature throughout a day
 class AmbientTemperature:
     def __init__(self, env):
         self.currAmbientTemp = 26.035699489
@@ -42,21 +36,22 @@ class AmbientTemperature:
         while True:
             time = env.now/3600.0
             x = time%24
-            self.currAmbientTemp = -0.000002986*x**6 + 0.000251496*x**5 - 0.007575376*x**4 + 0.094543418*x**3 - 0.404532576*x**2 + 0.303541658*x + 26.035699489
-#            print self.currAmbientTemp
+            self.currAmbientTemp = -0.000002986*x**6 + 0.000251496*x**5 - 0.007575376*x**4 + 0.094543418*x**3 - 0.404532576*x**2 + 0.303541658*x + 26.035699489 #Taken from accuweather.com, plotted in day_temp.xlsx
             ambientTempPlot[1].append(self.currAmbientTemp)
             ambientTempPlot[0].append(env.now)
             containerPlot[1].append(System.sys_temperature.level)
             containerPlot[0].append(env.now)
             yield env.timeout(timeStep)
         
+#Process of solar power input
 class SolarPower:
     def __init__(self,env):
         self.solarQin = env.process(self.solar_pOut(env))
         #irradiance units is W/m^2
         self.surface_area = 10*10**-4
         self.emmisivity = 0.3
-        
+    
+    #solar power input into the system is modelled using online data, taking into account of day-night cycle
     def solar_pOut(self, env):
         
         while True:
@@ -75,7 +70,7 @@ class SolarPower:
             except ValueError:
                 yield env.timeout(timeStep)
             
-
+#Heat convection process in which the heat transfer can be affected by factors such as natural wind speed and speed of the DC fan
 class Convection:
     def __init__(self, env):
         #units: W/m^2.K
@@ -133,7 +128,7 @@ class Convection:
         coeff = 10.45 - totalAirSpeed + 10 * (totalAirSpeed)**0.5
         return coeff
 
-
+#Heat exchanger process which is controlled by a PID state machine controller
 class HeatExchanger:
     def __init__(self, env):
         self.HeatExchanger = env.process(self.heatExchangerQ(env))
@@ -172,6 +167,7 @@ class HeatExchanger:
                 yield System.sys_temperature.put(-temp_change)
                 yield env.timeout(timeStep)
     
+    #sendCurrTemp and getControllerPWM are functions that communicate values with the PID controller through a server
     def sendCurrTemp(self):
         self.socket.send(b'%s'%(str(System.sys_temperature.level)))
 #        print "Sent temperature:   " + str(System.sys_temperature.level)

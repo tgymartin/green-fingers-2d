@@ -58,13 +58,13 @@ class PID_ControllerSM(sm.SM):
 
     def PID(self, state, inp): #function to calculate the next PID value used in getNextValues
         error = inp - self.targTemp
-        prevError = state[0]
-        currTime = time.clock()
-        dt = currTime - state[1]
+        prevError = state[0] #get the previous error from the state
+        currTime = time.clock() #get current time in seconds
+        dt = currTime - state[1] #find the (current time) - (previous time)
         if dt == 0: #prevent divide by 0 error
-            dt = 0.0001
+            dt = 0.00001
         
-        #calculate I value and clamp if too large
+        #NOT USED: calculate I value and clamp if too large.
         Ival = state[2] + (self.Ki * error* dt)
         if Ival > self.Imax:
             Ival = self.Imax
@@ -75,38 +75,24 @@ class PID_ControllerSM(sm.SM):
         #clamp the PWM to be within 0 to 100
         if outputPWM > 100:
             outputPWM = 100
-        if outputPWM < self.pumpMinPWM:
+        if outputPWM < self.pumpMinPWM: #pump has a stall point at roughly 2 volts.
             outputPWM = self.pumpMinPWM
         
-        return (outputPWM, [error, currTime, Ival]) #return the PID value
+        return (outputPWM, [error, currTime, Ival]) #return the PID value, and pass the error, current time and Ival to the next 'getNextValues' function.
 
 
-
+#Code below for interfacing with the Hardware in Loop Simulation
 if __name__ == '__main__':
-    
-    p = PID_ControllerSM(30,5,0,0)
+    p = PID_ControllerSM(30,20,0,1) #create a controller object with target 30 deg C
     p.start()
     context = zmq.Context()
     socket = context.socket(zmq.REP)
     socket.bind("tcp://*:5555")
     try:
         while True:
-            message = socket.recv()
+            message = socket.recv() #wait for a temperature
             print("Received request: %s" % message)
-            socket.send(b'%s' %(str(p.step(float(message)))))
-    except KeyboardInterrupt:
+            socket.send(b'%s' %(str(p.step(float(message))))) #return a PWM value to the Hardware in Loop Simulation
+    except KeyboardInterrupt: #exit when user presses Ctrl-C
         del socket
         exit()
-    
-    
-    
-#state [0] is state num 0 = off, 1 = kick, 2 = on
-#state1
-    #0 is prev err, 
-    #1 is prev time
-    #2 is I value
-#state 3 is kick start time
-
-#output
-# 0 is pump PWM from 1 to 100
-# 1 is fan pwm from 1 to 100
