@@ -1,5 +1,6 @@
 from libdw import sm
 import time
+import os
 
 class PID_ControllerSM(sm.SM):
     def __init__(self, targTemp, Kp, Ki, Kd):
@@ -47,7 +48,7 @@ class PID_ControllerSM(sm.SM):
     def PID(self, state, inp): #function to calculate the next PID value used in getNextValues
         error = inp - self.targTemp
         prevError = state[0]
-        currTime = time.time()
+        currTime = time.clock()
         dt = currTime - state[1]
         if dt == 0: #prevent divide by 0 error
             dt = 0.0001
