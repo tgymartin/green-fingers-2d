@@ -9,7 +9,8 @@ import simpy
 import math as m
 import matplotlib.pyplot as plt
 import random
-from PIDsm import PID_ControllerSM
+#from PIDsm import PID_ControllerSM
+import zmq
 
 #turn weather on or off
 weatherSwitch = True
@@ -138,12 +139,17 @@ class HeatExchanger:
         self.HeatExchanger = env.process(self.heatExchangerQ(env))
         self.pumpSupplyVoltage = 6.0
         self.waterTemp = 27.0
-        self.motorController = PID_ControllerSM(System.targetTemperature, 5, 0, 0)
-        self.motorController.start()
+#        self.motorController = PID_ControllerSM(System.targetTemperature, 5, 0, 0)
+#        self.motorController.start()
+        self.context = zmq.Context()
+        #  Socket to talk to server
+        self.socket = self.context.socket(zmq.REQ)
+        self.socket.connect("tcp://localhost:5555")
     
     def heatExchangerQ(self, env):
         while True:
-            motorPWM = self.motorController.step(System.sys_temperature.level)
+            self.sendCurrTemp()
+            motorPWM = self.getControllerPWM()
             pumpVoltage = self.pumpSupplyVoltage * motorPWM / 100.0
             if pumpVoltage < 6:
                 pumpVoltage = 6
@@ -165,22 +171,36 @@ class HeatExchanger:
                 # print System.sys_temperature.level
                 yield System.sys_temperature.put(-temp_change)
                 yield env.timeout(timeStep)
-
-env = simpy.rt.RealtimeEnvironment(factor=0.00001, strict = False)
-#env = simpy.Environment()
-System = System(env)
-SolarPower = SolarPower(env)
-AmbientTemperature = AmbientTemperature(env)
-Convection = Convection(env)
-HeatExchanger = HeatExchanger(env)
-env.run(until = 48*3600)
-
-def showPlot(xlist, ylist):
-    plt.plot(xlist, ylist, 'r-')
-    # plt.axis([0,0,0,0])
-    plt.show()
-
-showPlot(ambientTempPlot[0], ambientTempPlot[1])
-showPlot(solarPlot[0], solarPlot[1])
-showPlot(containerPlot[0], containerPlot[1])
+    
+    def sendCurrTemp(self):
+        self.socket.send(b'%s'%(str(System.sys_temperature.level)))
+#        print "Sent temperature:   " + str(System.sys_temperature.level)
+        
+    def getControllerPWM(self):
+        message = self.socket.recv()
+#        print "Received PWM:   " + message
+        return float(message)
+            
+            
+if __name__ == '__main__':
+    try:
+        env = simpy.rt.RealtimeEnvironment(factor=0.00001, strict = False)
+        #env = simpy.Environment()
+        System = System(env)
+        SolarPower = SolarPower(env)
+        AmbientTemperature = AmbientTemperature(env)
+        Convection = Convection(env)
+        HeatExchanger = HeatExchanger(env)
+        env.run(until = 7*24*3600)
+        
+#        def showPlot(xlist, ylist):
+#            plt.plot(xlist, ylist, 'r-')
+#            # plt.axis([0,0,0,0])
+#            plt.show()
+#        
+#        showPlot(ambientTempPlot[0], ambientTempPlot[1])
+#        showPlot(solarPlot[0], solarPlot[1])
+#        showPlot(containerPlot[0], containerPlot[1])
+    except KeyboardInterrupt:
+        exit()
         

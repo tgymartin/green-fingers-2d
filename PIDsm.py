@@ -1,6 +1,7 @@
 from libdw import sm
 import time
 import os
+import zmq
 
 class PID_ControllerSM(sm.SM):
     def __init__(self, targTemp, Kp, Ki, Kd):
@@ -23,29 +24,36 @@ class PID_ControllerSM(sm.SM):
         
         
     def getNextValues(self, state, inp):
+        
         PIDlist = self.PID(state[1], inp) #PIDlist is (outputPWM, [error, currTime, Ival, 0])
         if state[0] == 0: #off state
             if PIDlist[0] <= self.pumpMinPWM:
                 nextState = 0
+#                socket.send(b"0")
                 return (nextState, PIDlist[1], 0), 0
             else:
                 nextState = 1 #kickstart the motor
+#                socket.send(b"100")
                 return (nextState, PIDlist[1], time.time()), 100
 
         if state[0] == 1: #kickstart motor to prevent stalling at low voltages
             if time.time() - state[2] > self.kickTime: #kickstart for a limited time
                 nextState = 2
+#                socket.send(b"PIDlist[0]")
                 return (nextState, PIDlist[1], 0), PIDlist[0] 
             else:
                 nextState = 1
+#                socket.send(b"100")
                 return (nextState, PIDlist[1], state[2]), 100
             
         if state[0] == 2: #PID control
             if PIDlist[0] > self.pumpMinPWM:
                 nextState = 2
+#                socket.send(b"PIDlist[0]")
                 return (nextState, PIDlist[1], 0), PIDlist[0]
             else:
                 nextState = 0
+#                socket.send(b"0")
                 return (nextState, PIDlist[1], 0), 0
 
     def PID(self, state, inp): #function to calculate the next PID value used in getNextValues
@@ -73,6 +81,25 @@ class PID_ControllerSM(sm.SM):
         return (outputPWM, [error, currTime, Ival]) #return the PID value
 
 
+
+if __name__ == '__main__':
+    
+    p = PID_ControllerSM(30,5,0,0)
+    p.start()
+    context = zmq.Context()
+    socket = context.socket(zmq.REP)
+    socket.bind("tcp://*:5555")
+    try:
+        while True:
+            message = socket.recv()
+            print("Received request: %s" % message)
+            socket.send(b'%s' %(str(p.step(float(message)))))
+    except KeyboardInterrupt:
+        del socket
+        exit()
+    
+    
+    
 #state [0] is state num 0 = off, 1 = kick, 2 = on
 #state1
     #0 is prev err, 
