@@ -17,7 +17,10 @@ class PID_ControllerSM(sm.SM):
 
         self.kickTime = 0.1 #seconds
     
-
+    def setTargetTemperature(self,temperature):
+        self.targTemp = temperature
+        
+        
     def getNextValues(self, state, inp):
         PIDlist = self.PID(state[1], inp) #PIDlist is (outputPWM, [error, currTime, Ival, 0])
         if state[0] == 0: #off state
