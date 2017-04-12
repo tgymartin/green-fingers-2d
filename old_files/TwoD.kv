@@ -1,0 +1,127 @@
+#File name: GUI2.py
+
+<MotorButton@Button>:
+    font_size: 20
+    halign: 'left'
+    valign: 'middle'
+
+<MotorToggleButton@ToggleButton>:
+    font_size: 20
+    halign: 'left'
+    valign: 'middle'
+    group: 'motorbuttons'
+
+<QuitButton@Button>:
+    text: 'Quit'
+    font_size: 20
+    pos_hint: {'right':1, 'bottom':0}
+    size_hint: (0.2,0.1)
+    
+<DefaultLabel@Label>:
+    font_size: 20
+    halign: 'left'
+    valign: 'middle'
+    
+<ControlPanelScreen>:
+    BoxLayout:
+        padding: (20,20)
+        orientation: 'vertical'
+        #Motor Settings Row
+        BoxLayout:
+            orientation: 'horizontal'
+            DefaultLabel:
+                text: "Motor" 
+            BoxLayout:
+                orientation: 'vertical'
+                MotorToggleButton:
+                    text: "Auto"
+                    #on_release:
+                MotorToggleButton:
+                    text: "Manual"
+                    #on_release:
+                MotorButton:
+                    text: "Stop"
+                    		      
+            BoxLayout:
+                orientation: 'vertical'
+                DefaultLabel: 
+                    text: "PWM Val: " + str(manual_slider.value)
+                Slider:
+                    min: 0
+                    max: 100
+                    value: 50
+                    id: manual_slider
+                    step: 0.1
+                    value_track: 'True'
+                    value_track_color: 1, 0.3, 0.8, 0.5
+        #Controller Settings Row   
+        BoxLayout:
+            orientation: 'horizontal'
+            DefaultLabel:
+                text: "Controller"
+            #P box
+            BoxLayout:
+                orientation: 'vertical'
+                BoxLayout:
+                    orientation: 'horizontal'
+                    DefaultLabel:
+                        text: "P"
+                    DefaultLabel:
+                        text: str(p_slider.value)
+                Slider:
+                    min: 0
+                    max: 10
+                    value: 5
+                    id: p_slider
+                    step: 0.1
+            #I box
+            BoxLayout:
+                orientation: 'vertical'
+                BoxLayout:
+                    orientation: 'horizontal'
+                    DefaultLabel:
+                        text: "I"
+                    DefaultLabel:
+                        text: str(i_slider.value)
+                Slider:
+                    min: 0
+                    max: 10
+                    value: 5
+                    id: i_slider
+                    step: 0.1
+            #D box
+            BoxLayout:
+                orientation: 'vertical'
+                BoxLayout:
+                    orientation: 'horizontal'
+                    DefaultLabel:
+                        text: "D"
+                    DefaultLabel:
+                        text: str(d_slider.value)
+                Slider:
+                    min: 0
+                    max: 10
+                    value: 5
+                    id: d_slider
+                    step: 0.1
+        #Temperature Settings Row              
+        BoxLayout:
+            orientation: 'horizontal'
+            DefaultLabel:
+                text: "Temperature"
+            BoxLayout:
+                orientation: 'vertical'
+                DefaultLabel:
+                    text: "T(in)"
+                DefaultLabel:
+                    text: "value of Tin"          
+            BoxLayout:
+                orientation: 'vertical'
+                DefaultLabel:
+                    text: "InitialTemp: " + str(initialtemp_slider.value)
+                Slider:
+                    min: 0
+                    max: 10
+                    value: 5
+                    id: initialtemp_slider
+                    step: 0.1

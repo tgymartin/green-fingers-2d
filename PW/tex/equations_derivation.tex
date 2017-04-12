@@ -1,0 +1,22 @@
+\documentclass[12pt,a4paper]{IEEEtran}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage[justification=centering, font={small,it}]{caption}
+\author{Martin Tan (1002173), ADD AUTHORS HERE}
+\title{Physical World 2D Report}
+\begin{document}
+	\maketitle
+	\section{Derivation}
+	$$T_i - T_{amb} = -R \rho V c \frac{dT}{dt}$$
+	$$\int_{0}^{t} dt = -R \rho V c \int_{T_i}^{T}\frac{1}{T-T_{amb}} dT$$
+	$$\frac{t}{R \rho V c} = \ln \left| \frac{T - T_{amb}}{T_i - T_{amb}} \right|$$
+	$$\left( T_i - T_{amb} \right) e^{-\frac{t}{R \rho V c}} = T - T_{amb}$$
+	$$\Delta T = \Delta T_{initial} e^{-\frac{t}{R \rho V c}}$$
+\end{document}

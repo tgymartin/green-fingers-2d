@@ -1,0 +1,190 @@
+######BUTTONS######
+
+#Creating dynamic classes of new widgets without any python declaration
+<MinusButton@Button>
+    background_color: [(235/255.0), (34/255.0), (88/255.0), 0.5]
+    font_size: 30
+    
+<PlusButton@Button>
+    background_color: [(56/255.0), (218/255.0), (113/255.0), 0.5]
+    font_size: 30
+
+
+
+######LABELS######
+    
+<TemperatureLabel@Label>:
+    font_size: 20
+    halign: 'center'
+    valign: 'middle'
+
+<StandardLabel@Label>:
+    font_size: 20
+    halign: 'center'
+    valign: 'middle'
+
+<Title@Label>:
+    font_size: 35
+    halign: 'left'
+    valign: 'middle'
+
+<MotorOutput@Label>
+    font_size: 30
+    halign: 'center'
+    valign: 'middle'
+
+<FanOutput@Label>
+    font_size: 30
+    halign: 'center'
+    valign: 'middle'
+
+
+######LAYOUT######
+
+<MainLayout>:
+    BoxLayout:
+        orientation: "vertical"
+        
+        #Temperature Panel
+        BoxLayout:
+            orientation: "vertical"
+            #Set background color of temperature panel
+            canvas:
+                Color:
+                    rgb: (251/255.0), (235/255.0), (156/255.0), 0.8
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+            Title:
+                text: "Temperature"
+                bold: True
+                color: 0,0,0,1
+
+            BoxLayout:
+                orientation: 'horizontal'
+
+                TemperatureLabel:
+                    size_hint: (0.45, 1)
+                    text: "Target Temperature"
+                    color: 0,0,0,1
+    
+                BoxLayout:
+                    orientation: 'vertical'
+                    
+                    BoxLayout:
+                        orientation: "horizontal"
+
+                        MinusButton:
+                            text: "-"
+                            on_press: targtemp_slider.value -= 0.1
+
+                        StandardLabel:
+                            #id allows weak referencing within the root widget
+                            id: targtemp
+                            text: str(targtemp_slider.value_normalized)
+                            text: str(targtemp_slider.value)
+                            color: 0,0,0,1
+                            bold: True
+
+                        PlusButton:
+                            text: "+"
+                            on_press: targtemp_slider.value += 0.1
+                        StandardLabel:
+                            size_hint: (0.1,1)
+                    Slider:
+                        min: 25
+                        max: 35
+                        value_normalized: 0.5
+                        #step attribute determines the intervals of slider's value
+                        step: 0.1
+                        id: targtemp_slider
+                        #event when slider moves
+                        on_touch_move: root.motor_output()
+                        on_touch_up: root.motor_output()
+            
+            #System Temperature Row
+            
+            BoxLayout:
+                orientation: 'horizontal'
+
+                TemperatureLabel:
+                    size_hint: (0.45, 1)
+                    text: "Current Temperature"
+                    color: 0,0,0,1
+                    
+                BoxLayout:
+                    orientation: 'vertical'
+                    
+                    BoxLayout:
+                        orientation: "horizontal"
+
+                        MinusButton:
+                            text: "-"
+                            on_press: systemp_slider.value -= 0.1
+
+                        StandardLabel:
+                            id: systemp
+                            text: str(systemp_slider.value_normalized)
+                            text: str(systemp_slider.value)
+                            color: 0,0,0,1
+                            bold: True
+
+                        PlusButton:
+                            text: "+"
+                            on_press: systemp_slider.value += 0.1
+                        StandardLabel:
+                            size_hint: (0.1,1)
+
+                    Slider:
+                        min: 25
+                        max: 45
+                        value_normalized: 0.5
+                        step: 0.1
+                        id: systemp_slider
+                        on_touch_move: root.motor_output(),root.fan_output()
+                        on_touch_up: root.motor_output(),root.fan_output()
+           
+        #Controller Output Panel
+        BoxLayout:
+            orientation: 'vertical'
+            canvas:
+                Color:
+                    rgb: (131/255.0), (192/255.0), (235/255.0), 0.8
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+            Title:
+                text: "Controller Output"
+                halign: "left"
+                bold: True
+                color: 0,0,0,1
+                size_hint: (1,0.7)
+
+            GridLayout:
+                cols: 2
+                MotorOutput:
+                    text: "Motor Power"
+                    size_hint: (0.7,1)
+                    color: 0,0,0,1
+                BoxLayout:
+                    orientation: 'vertical'
+                    MotorOutput:
+                        text: ''
+                        id: motorout
+                        bold: True
+                    ProgressBar:
+                        id: motorbar
+                FanOutput:
+                    text: "Fan Power"
+                    size_hint: (0.7,1)
+                    color: 0,0,0,1
+                BoxLayout:
+                    orientation: 'vertical'
+                    MotorOutput:
+                        text: ''
+                        id: fanout
+                        bold: True
+                    ProgressBar:
+                        id: fanbar
