@@ -1,10 +1,8 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: final_report.aux
-I couldn't open database file final_report.bib
----line 21 of file final_report.aux
- : \bibdata{final_report
- :                      }
-I'm skipping whatever remains of this command
-The style file: ieeetr.bst
-I found no \citation commands---while reading file final_report.aux
-I found no database files---while reading file final_report.aux
-(There were 3 error messages)
+The style file: IEEEtran.bst
+Database file #1: biblio.bib
+-- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+
+Done.
