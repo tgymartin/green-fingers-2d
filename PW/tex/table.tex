@@ -1,0 +1,42 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[latin1]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{gensymb}
+\usepackage{hyperref}
+\usepackage{cite}
+\usepackage[margin=0.5in]{geometry}
+\usepackage[justification=centering, font={small,it}]{caption}
+\author{Dicson Wijaya (1002289), Wenkie Lau (1002219), \\ Mok Jun Neng (1002219), Charlotte Phang (1002277), \\ Martin Tan (1002173)}
+\title{PW Tables\\ F06 Team 06}
+
+\begin{document}
+	\begin{table}[]
+		\centering
+		\caption{My caption}
+		\label{my-label}
+		\begin{tabular}{|l|l|l|}
+			\hline
+			& Lower Limit & Upper Limit \\ \hline
+			\multicolumn{1}{|c|}{R\_\{conv water\} at 25 C} & 1.391873685 & 0.006959368 \\ \hline
+			R\_\{cold glass\}                                       & 0.573124458 & 0.512795568 \\ \hline
+			R\_\{conv water\} at 35 C                       & 1.391873685 & 0.023197895 \\ \hline
+			theoretical $\lambda\_\{bottle\}$                         & 0.29789639  & 1.841780616 \\ \hline
+		\end{tabular}
+	\end{table}
+    \begin{table}[]
+    	\centering
+    	\caption{My caption}
+    	\label{my-label}
+    	\begin{tabular}{|l|l|l|l|l|}
+    		\hline
+    		\multicolumn{1}{|c|}{}                                  & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Lower\\ Limit h\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Upper\\ Limit h\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Lower\\ Limit k\end{tabular}} & \multicolumn{1}{c|}{\begin{tabular}[c]{@{}c@{}}Upper\\ Limit k\end{tabular}} \\ \hline
+    		\multicolumn{1}{|c|}{R\_\{conv water\} at 25 C} & 50                                                                           & 10000                                                                        &                                                                              &                                                                              \\ \hline
+    		R\_\{cold glass\}                                       &                                                                              &                                                                              & 0.17                                                                         & 0.19                                                                         \\ \hline
+    		R\_\{conv water\} at 35 C                       & 50                                                                           & 3000                                                                         &                                                                              &                                                                              \\ \hline
+    	\end{tabular}
+    \end{table}
+\end{document}
