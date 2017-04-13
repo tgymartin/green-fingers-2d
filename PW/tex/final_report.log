@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.26)  13 APR 2017 09:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.26)  13 APR 2017 16:37
 entering extended mode
 **./final_report.tex
 (final_report.tex
@@ -487,7 +487,7 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 16.
 
-<methodology.png, id=40, 475.0548pt x 319.9152pt>
+<methodology.png, id=32, 475.0548pt x 319.9152pt>
 File: methodology.png Graphic file (type png)
  <use methodology.png>
 Package pdftex.def Info: methodology.png used on input line 32.
@@ -497,7 +497,7 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 32--33
  [] 
  []
 
-<graph_lambdaBottle.png, id=45, 661.80583pt x 394.47375pt>
+<graph_lambdaBottle.png, id=37, 661.80583pt x 394.47375pt>
 File: graph_lambdaBottle.png Graphic file (type png)
 
 <use graph_lambdaBottle.png>
@@ -512,225 +512,91 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 55--56
 
 
  <./methodology.png> <./graph_lambdaBottle.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 72--74
-\OT1/ptm/m/n/10 Based on on-line sources [[]4[]], the con-duc-tiv-ity of
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 72--74
-\OT1/ptm/m/n/10 polystyrene (non-expanded HIPS) is ap-prox-i-mately
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 77--78
+Underfull \hbox (badness 10000) in paragraph at lines 74--75
 
  []
 
-<heat_exchanger_side.png, id=81, 1003.75pt x 1003.75pt>
+<heat_exchanger_side.png, id=73, 1003.75pt x 1003.75pt>
 File: heat_exchanger_side.png Graphic file (type png)
 
 <use heat_exchanger_side.png>
-Package pdftex.def Info: heat_exchanger_side.png used on input line 82.
+Package pdftex.def Info: heat_exchanger_side.png used on input line 79.
 (pdftex.def)             Requested size: 154.80157pt x 154.79852pt.
 
-<heat_exchanger_top.png, id=83, 1003.75pt x 1003.75pt>
+<heat_exchanger_top.png, id=75, 1003.75pt x 514.92375pt>
 File: heat_exchanger_top.png Graphic file (type png)
 
 <use heat_exchanger_top.png>
-Package pdftex.def Info: heat_exchanger_top.png used on input line 92.
-(pdftex.def)             Requested size: 154.80157pt x 154.79852pt.
-
-Underfull \vbox (badness 1721) has occurred while \output is active []
-
-
-<air_gaps.jpeg, id=85, 913.91437pt x 563.10374pt>
+Package pdftex.def Info: heat_exchanger_top.png used on input line 89.
+(pdftex.def)             Requested size: 154.80157pt x 79.41164pt.
+ <air_gaps.jpeg, id=77, 913.91437pt x 563.10374pt>
 File: air_gaps.jpeg Graphic file (type jpg)
- <use air_gaps.jpeg>
-Package pdftex.def Info: air_gaps.jpeg used on input line 100.
-(pdftex.def)             Requested size: 180.60315pt x 111.27835pt.
 
-<image_heatExchanger.jpg, id=87, 1362.691pt x 930.677pt>
+<use air_gaps.jpeg>
+Package pdftex.def Info: air_gaps.jpeg used on input line 97.
+(pdftex.def)             Requested size: 180.60315pt x 111.27835pt.
+ <image_heatExchanger.jpg, id=79, 1362.691pt x 930.677pt>
 File: image_heatExchanger.jpg Graphic file (type jpg)
 
 <use image_heatExchanger.jpg>
-Package pdftex.def Info: image_heatExchanger.jpg used on input line 108.
+Package pdftex.def Info: image_heatExchanger.jpg used on input line 105.
 (pdftex.def)             Requested size: 232.19843pt x 158.58221pt.
 
-<demo_setup.png, id=88, 1152.2247pt x 452.1693pt>
+<demo_setup.png, id=80, 1152.2247pt x 452.1693pt>
 File: demo_setup.png Graphic file (type png)
  <use demo_setup.png>
-Package pdftex.def Info: demo_setup.png used on input line 117.
+Package pdftex.def Info: demo_setup.png used on input line 114.
 (pdftex.def)             Requested size: 206.39685pt x 80.99368pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [2 <./heat_exchanger_side.png (PNG copy)> <./heat_exchanger_top.png (PNG copy)
-> <./air_gaps.jpeg> <./image_heatExchanger.jpg>]
-Overfull \hbox (43.57622pt too wide) detected at line 136
-[] \OT1/cmr/m/n/10 = [] \OMS/cmsy/m/n/10   [] \OT1/cmr/m/n/10 + [] [] + [] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 136--139
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 139--140
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 140--141
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 141--142
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 142--143
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 143--145
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 145--146
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 146--148
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 148--149
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 149--151
-
- []
-
-
-Overfull \hbox (54.37428pt too wide) detected at line 151
-\OT1/cmr/m/n/10 0 = \OML/cmm/m/it/10 m[]c[] [] \OMS/cmsy/m/n/10   \OML/cmm/m/it
-/10 [] [] \OMS/cmsy/m/n/10   [] \OT1/cmr/m/n/10 + [][\OML/cmm/m/it/10 c[] []\O
-T1/cmr/m/n/10 ]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 151--152
-
- []
-
-
-Overfull \hbox (41.59647pt too wide) detected at line 152
-\OML/cmm/m/it/10 [] [] \OT1/cmr/m/n/10 + [] \OMS/cmsy/m/n/10   []\OT1/cmr/m/n/
-10 [\OML/cmm/m/it/10 c[] []\OT1/cmr/m/n/10 ] = \OML/cmm/m/it/10 m[]c[] []
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 152--153
-
- []
-
-
-Overfull \hbox (48.46251pt too wide) detected at line 153
-[] \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 dt \OT1/cmr/m/n/10 = [] []\OML/cmm/m/it/10
- dT[]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 153--154
-
- []
-
-
-Overfull \hbox (65.42638pt too wide) detected at line 154
-\OML/cmm/m/it/10 t \OT1/cmr/m/n/10 + \OML/cmm/m/it/10 c \OT1/cmr/m/n/10 = [] []
-(\OML/cmm/m/it/10 [] [] \OT1/cmr/m/n/10 + [] \OMS/cmsy/m/n/10   []\OT1/cmr/m/n
-/10 [\OML/cmm/m/it/10 c[] []\OT1/cmr/m/n/10 ])
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 154--155
-
- []
-
-
-Overfull \hbox (77.64851pt too wide) detected at line 155
-[] \OT1/cmr/m/n/10 = [](\OML/cmm/m/it/10 [] [] \OT1/cmr/m/n/10 + [] \OMS/cmsy/
-m/n/10   []\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 c[] []\OT1/cmr/m/n/10 ])
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 155--156
-
- []
-
-
-Overfull \hbox (48.33441pt too wide) detected at line 156
-\OML/cmm/m/it/10 e[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 [] [] \OT1/cmr/m/n/10 
-+ [] \OMS/cmsy/m/n/10   []\OT1/cmr/m/n/10 [\OML/cmm/m/it/10 c[] []\OT1/cmr/m/n/
-10 ]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 156--157
-
- []
-
-
-Overfull \hbox (48.33441pt too wide) detected at line 157
-[] \OT1/cmr/m/n/10 = \OML/cmm/m/it/10 e[] \OMS/cmsy/m/n/10   \OML/cmm/m/it/10 
-[] [] \OT1/cmr/m/n/10 + [][\OML/cmm/m/it/10 c[] []\OT1/cmr/m/n/10 ]
+ [2 <./heat_exchanger_side.png (PNG copy)> <./heat_exchanger_top.png> <./air_ga
+ps.jpeg> <./image_heatExchanger.jpg> <./demo_setup.png>]
+<graph_actualWcvAgainstVoltage.png, id=95, 717.34666pt x 402.83833pt>
+File: graph_actualWcvAgainstVoltage.png Graphic file (type png)
+
+<use graph_actualWcvAgainstVoltage.png>
+Package pdftex.def Info: graph_actualWcvAgainstVoltage.png used on input line 1
+49.
+(pdftex.def)             Requested size: 258.0pt x 144.88031pt.
+
+Overfull \hbox (6.0pt too wide) in paragraph at lines 149--150
+ [] 
  []
 
 (final_report.bbl)
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 165.
- [3 <./demo_setup.png>]
+ [3 <./graph_actualWcvAgainstVoltage.png>]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 165.
  (final_report.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 165.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 165.
 Package rerunfilecheck Info: File `final_report.out' has not changed.
-(rerunfilecheck)             Checksum: 05E4518F9852CA189046CD6433FE6D0A;470.
+(rerunfilecheck)             Checksum: 7DD83319D9DA93FB2037503E31EA5FA5;379.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 165.
  ) 
 Here is how much of TeX's memory you used:
  8122 strings out of 493333
- 125444 string characters out of 3139191
- 225444 words of memory out of 3000000
- 11521 multiletter control sequences out of 15000+200000
- 39869 words of font info for 89 fonts, out of 3000000 for 9000
+ 125600 string characters out of 3139191
+ 224444 words of memory out of 3000000
+ 11524 multiletter control sequences out of 15000+200000
+ 38733 words of font info for 88 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,6n,39p,538b,390s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,7n,39p,538b,390s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9
 /fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
-ic/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
-ts/cm/cmmi9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr
-10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr5.pfb><C:
-/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program F
-iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTe
-X 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
-/public/amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/ur
-w/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.p
-fb>
-Output written on final_report.pdf (3 pages, 5364443 bytes).
+ic/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
+ts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmm
+i9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C
+:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program 
+Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKT
+eX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
+amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/
+utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on final_report.pdf (3 pages, 5035744 bytes).
 PDF statistics:
- 171 PDF objects out of 1000 (max. 8388607)
- 34 named destinations out of 1000 (max. 500000)
- 108 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 170 PDF objects out of 1000 (max. 8388607)
+ 31 named destinations out of 1000 (max. 500000)
+ 97 words of extra memory for PDF output out of 10000 (max. 10000000)
 

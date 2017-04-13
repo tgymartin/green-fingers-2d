@@ -9,7 +9,7 @@
 \usepackage{hyperref}
 \usepackage{cite}
 \usepackage[justification=centering, font={small,it}]{caption}
-\author{Dicson Wijaya (1002289), Wenkie Lau (1002219), \\ Mok Jun Neng (1002219), Charlotte Phang (1002277),\\ Martin Tan (1002173)}
+\author{Dicson Wijaya (1002289), Wenkie Lau (1002219), \\ Mok Jun Neng (1002286), Charlotte Phang (1002277),\\ Martin Tan (1002173)}
 \title{Physical World 2D Report}
 \begin{document}
 	\maketitle
@@ -60,17 +60,14 @@
 	
 	The best fit curve was found to be: 
 	$$y = 1.58296 \times 10^{1} \cdot \exp(-5.28225\times 10^{-3}\cdot t)$$
-	
 	Given $B = 5.28225\times 10^{-3}$, we can empirically find $R$ by:
 	$$R_{algae bottle} = \frac{1}{\lambda_{algae bottle}} = \frac{1}{B \rho V c}$$
-	
 	Given $\rho = 0.9881 g \cdot cm^{-3}$ at $50 \degree C$ (see reference \cite{waterDensity}), $c = 4.18 J g^{-1} K^{-1}$ (see reference \cite{waterHeatCap}), and $V = 30 cm^{-3}$ (measured), then we can determine using the same methods of data analysis:
 	$$\lambda_{algae bottle} = 0.654512033 W K^{-1}$$
 	$$\lambda_{tubing} = 0.360332327W K^{-1}$$
-	
 	Using the value of $\lambda_{algae bottle}$ and the dimensions of the algae bottle, we are able to find the thermal conductivity $k$ of the polystyrene \cite{polystyreneBottle} algae bottle.
 	$$k_{polystyrene} = 1.7651032 \times 10^{-1} W m^{-1} K^{-1}$$
-	Based on online sources \cite{polystyreneConductivity}, the conductivity of polystyrene (non-expanded HIPS) is approximately $1.72 \times 10^{-1} W m^{-1} K^{-1}$, indicating that the result attained is accurate.
+	Based on research \cite{polystyreneConductivity}, the conductivity of (non-expanded) high impact polystyrene is approximately $1.72 \times 10^{-1} W m^{-1} K^{-1}$, indicating that the result attained is accurate.
 	
 	
  	\section{Design of Heat Exchanger}
@@ -110,54 +107,57 @@
  				\label{fig:actual_heatExchanger}
  			\end{center}
  		\end{figure}
- 	
- 	\section{Demonstration}
- 		\begin{figure}[H]
- 			\begin{center}
- 				\includegraphics[width=0.4\textwidth]{demo_setup.png}
- 				\caption{}
- 				\label{fig:demo_setup}
- 			\end{center}
- 		\end{figure}
 	 
 	\section{Considering the Tubing as an Open System}
-	If we consider the silicone tubing provided as an open system, the rate of change of energy in the control volume $\dot{E_{cv}}$ is given by:
-	$$\dot{Q}_{cv} - \dot{W}_{cv} + \dot{m}_{i} \left( h_i + \frac{V_i}{2} + gz_i \right) + \dot{m}_{e} \left( h_e + \frac{V_e}{2} + gz_e \right)$$
-	Assuming steady state, $\dot{m}_{i} = \dot{m}_{e} = \dot{m}$ and $\dot{E_{cv}} = 0$
-	Thus the equation may be simplified to:
-	$$\frac{dE_{cv}}{dt} = \dot{Q}_{cv} - \dot{W}_{cv} + \dot{m} \left( h_1 - h_2 \right)$$
+	\begin{figure}[H]
+		\begin{center}
+			\includegraphics[width=0.4\textwidth]{demo_setup.png}
+			\caption{Final Demonstration Setup}
+			\label{fig:demo_setup}
+		\end{center}
+	\end{figure}
+	Considering the silicone tubing, pump and heat exchanger (excluding the algae bottle) shown in Figure \ref{fig:demo_setup} as an open system, the rate of change of energy in the control volume $\dot{E_{cv}}$ is given by:
+	$$\dot{Q}_{cv} - \dot{W}_{cv} + \dot{m}_{i} \left( h_i + \frac{V_i^2}{2} + gz_i \right) + \dot{m}_{e} \left( h_e + \frac{V_e^2}{2} + gz_e \right)$$
+	Assuming steady state, $\dot{m}_{i} = \dot{m}_{e} = \dot{m}_w$ and $\dot{E_{cv}} = 0$ and ignoring gravitational potential energy and kinetic energy effects, the equation may be simplified to:
+	$$\frac{dE_{cv}}{dt} = \dot{Q}_{cv} - \dot{W}_{cv} + \dot{m}_w \left( h_1 - h_2 \right)$$
 	Expanding $\dot{Q}_{cv}$,
-	$$\dot{Q}_{cv} = \dot{Q}_{exchanged} + \dot{Q}_{motor,water}$$
+	$$\dot{Q}_{cv} = \dot{Q}_{exchanged} + \dot{Q}_{pump,water}$$
+	However, in this case, the pump can be assumed to impart negligible heat on the water flowing through it. Thus, the heat transferred from the pump to the cooling water $\dot{Q}_{pump,water} = 0$
+	$$\dot{Q}_{cv} = m_a c_a \dot{T}_a - \dot{Q}_{ambient}$$
+	$$\dot{Q}_{cv} = m_a c_a \dot{T}_a - \lambda_{ambient} \left( T_a - T_{amb} \right)$$
+	However, since the algae bottle is largely in direct contact with the cooling water and due to the high thermal conductance measured ($\lambda_{algae bottle} = 0.654512033 W K^{-1}$) we can assume that a negligible proportion of heat escapes into the air via convection. Thus, $\lambda_{ambient} \left( T_a - T_{amb} \right) = 0$, and the energy balance equation can be written:
+	$$m_a c_a \dot{T}_a - \dot{W}_{cv} + \dot{m}_w c_w ( T_i - T_e ) = 0$$
+	The simplified equation for $\dot{E_{cv}}$ can be thus written (part b4):
+	$$\dot{E_{cv}} = m_a c_a \dot{T}_a - \dot{W}_{cv} + \dot{m}_w c_w ( T_i - T_e )$$
+	To express $\dot{(W)_cv}$ as a function of $T_a$, we assume $\dot{E_{cv}} = 0$.
+	$$m_a c_a \dot{T}_a - \lambda_{amb} \left( T_a - T_{amb} \right) - \dot{W}_{cv} + \dot{m}_w c_w \left( T_i - T_e \right) = 0$$
+	$$\int dt = \int \frac{m_a c_a}{\lambda_{amb} \left( T_a - T_{amb} \right) + \dot{W}_{cv} - \dot{m}_w c_w \left( T_i - T_e \right)} dT_a$$
+	$$t+ c = \frac{m_a c_a}{\lambda_{amb}} \ln(\lambda_{amb} \left( T_a - T_{amb} \right) + \dot{W}_{cv} - \dot{m}_w c_w \left( T_i - T_e \right))$$
+	$$\frac{\lambda_{amb} \left( t + c \right)}{m_a c_a}$$  
+	$$= \ln(\lambda_{amb} \left( T_a - T_{amb} \right) + \dot{W}_{cv} - \dot{m}_w c_w \left( T_i - T_e \right))$$
+	$$Ae^{\lambda_{amb} t/(m_a c_a)} = \lambda_{amb} \left( T_a - T_{amb} \right) + \dot{W}_{cv} - \dot{m}_w c_w \left( T_i - T_e \right)$$
+	$$\dot{W}_{cv} = Ae^{\lambda_{amb} t/(m_a c_a)} - \lambda_{amb} \left( T_a - T_{amb} \right) + \dot{m}_w c_w \left( T_i - T_e \right)$$
+	where $A \in \mathbb{R}$
 	
-	\section{blah}
+	\section{Analysis}
+	The value of $A$ was experimentally determined to be:
+	$$A = -1.32 + 0.654(308.6-298.1) - 0.728\cdot 4.18(298.6-295.4)$$
+	$$= 4.94 W$$
+	Further experiments were conducted to measure the flow rate of the pump against the voltage supplied by plotting a volume against time graph for each voltage and finding the gradient of the graph, Thus, the actual $\dot{W}_{cv}$ done by the pump can be calculated. The results are shown in Figure \ref{fig:actual_Wcv}.
+	\begin{figure}[H]
+		\begin{center}
+			\includegraphics[width=0.5\textwidth]{graph_actualWcvAgainstVoltage.png}
+			\caption{Graph of Actual $|\dot{W}_{cv}|$ against Pump Voltage}
+			\label{fig:actual_Wcv}
+		\end{center}
+	\end{figure}
+	The data collected indicates that when the $V_{pump} = 6V$ the actual $\dot{W}_{cv}$ is constant at $-1.94653\times 10^{-5} W$  The discrepancy between the actual and calculated values can be attributed to heat loss to the surroundings. This unaccounted heat loss could be attributed to:
 	\begin{enumerate}
-		\def\labelenumi{\roman{enumi}.}
-		\item The equation of control volume in the heat exchanger
-		$$\frac{dE_{cv}}{dt} = \dot{Q}_{cv} - \dot{W}_{cv} + \dot{m}_{i} \left( h_i + \frac{V_i}{2} + gz_i \right) + \dot{m}_{e} \left( h_e + \frac{V_e}{2} + gz_e \right)$$ \\
-		\textit{Assume steady state, so $\dot{m}_{i} = \dot{m}_{e} = \frac{dE_{cv}}{dt} = \dot{m}$ No change in potential and kinetic energy} \\
-		\textit{Air is ideal gas.} \\
-		$$\frac{dE_{cv}}{dt} = \dot{Q}_{cv} - \dot{W}_{cv} + \dot{m} \left( h_1 - h_2 \right)$$ \\
-		\item The rate of heat entering control volume \\
-		$$\dot{Q}_{cv} = \dot{Q}_{exchanged}$$ \\
-		$$\dot{Q}_{cv} = m_a c_a \left( \frac{dT_a}{dt} \right) - \dot{Q}_{ambient}$$ \\
-		$$\dot{Q}_{cv} = m_a c_a \left( \frac{dT_a}{dt} \right) - \lambda_{algaebottle} \left( T_a - T_{amb} \right)$$ \\
-		\textit{By substituting value of $\lambda_{algaebottle} = 1.76$} \\
-		$$\dot{Q}_{cv} = m_a c_a \left( \frac{dT_a}{dt} \right) - 1.76 \left( T_a - T_{amb} \right)$$ \\
-		\item The equation of control volume in the heat exchanger \\
-		\textit{From simplified $\frac{dE_{cv}}{dt}$ equation in the previous part} \\
-		$$\frac{dE_{cv}}{dt} = \dot{Q}_{cv} - \dot{W}_{cv} + \dot{m} \left( h_1 - h_2 \right)$$ \\
-		\item Express $\dot{W}_{cv}\ = f \left( T_a \right)$ assuming $\dot{W}_{cv}$ is a constant
-		\textit{Assume that $\frac{dE_{cv}}{dt} = 0$} \\
-		$$0 = m_a c_a \left( \frac{dT_a}{dt} \right) - \lambda_{algaebottle} \left( T_a - T_{amb} \right) - \dot{W}_{cv} + \dot{m} \lbrack c_w \left( T_i - T_e \right) \rbrack$$ \\
-		$$\lambda_{algaebottle} \left( T_a - T_{amb} \right) + \dot{W}_{cv} - \dot{m} \lbrack c_w \left( T_i - T_e \right) \rbrack = m_a c_a \left( \frac{dT_a}{dt} \right)$$ \\
-		$$\int 1 dt = \int \frac{m_a c_a}{\lambda_{algaebottle} \left( T_a - T_{amb} \right) + \dot{W}_{cv} - \dot{m} \lbrack c_w \left( T_i - T_e \right) \rbrack} dT_a$$ \\
-		$$t+ c = \frac{m_a c_a}{\lambda_{algaebottle}} \ln(\lambda_{algaebottle} \left( T_a - T_{amb} \right) + \dot{W}_{cv} - \dot{m} \lbrack c_w \left( T_i - T_e \right) \rbrack)$$ \\
-		$$\frac{\lambda_{algaebottle} \left( t + c \right)}{m_a c_a} = \ln(\lambda_{algaebottle} \left( T_a - T_{amb} \right) + \dot{W}_{cv} - \dot{m} \lbrack c_w \left( T_i - T_e \right) \rbrack)$$ \\
-		$$e^{\frac{\lambda_{algaebottle} \left( t + c \right)}{m_a c_a}} = \lambda_{algaebottle} \left( T_a - T_{amb} \right) + \dot{W}_{cv} - \dot{m} \lbrack c_w \left( T_i - T_e \right) \rbrack$$ \\
-		$$\dot{W}_{cv} = e^{\frac{\lambda_{algaebottle} \left( t + c \right)}{m_a c_a}} - \lambda_{algaebottle} \left( T_a - T_{amb} \right) + \dot{m} \lbrack c_w \left( T_i - T_e \right) \rbrack$$
+		\item Convection to air
+		\item Non-zero thermal mass of the system
 	\end{enumerate}
+
 	
-	\section{Derivation}
 	
 	\bibliographystyle{IEEEtran}
 	\bibliography{biblio}
