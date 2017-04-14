@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.27)  13 APR 2017 16:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.3.27)  14 APR 2017 19:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -430,38 +430,45 @@ Underfull \hbox (badness 10000) in paragraph at lines 25--26
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 29--30
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 31--32
-
- []
-
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 36.
-[1
+<chi.png, id=12, 821.0675pt x 495.8525pt>
+File: chi.png Graphic file (type png)
+ <use chi.png>
+Package pdftex.def Info: chi.png used on input line 37.
+(pdftex.def)             Requested size: 393.9284pt x 237.893pt.
+ [1
 
 {/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 36.
+<constraints.png, id=27, 788.9475pt x 1056.94875pt>
+File: constraints.png Graphic file (type png)
+ <use constraints.png>
+Package pdftex.def Info: constraints.png used on input line 45.
+(pdftex.def)             Requested size: 236.35544pt x 316.6355pt.
 
-(./2DprojectSW_F06_T06_Q3.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 36.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 36.
+<xcel.png, id=28, 1083.04625pt x 470.75874pt>
+File: xcel.png Graphic file (type png)
+ <use xcel.png>
+Package pdftex.def Info: xcel.png used on input line 52.
+(pdftex.def)             Requested size: 393.9284pt x 171.22571pt.
+ [2 <./chi.png> <./constraints.png>]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 59.
+ [3 <./xcel.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 59.
+ (./2DprojectSW_F06_T06_Q3.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 59.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 59.
 Package rerunfilecheck Info: File `2DprojectSW_F06_T06_Q3.out' has not changed.
 
 (rerunfilecheck)             Checksum: 86E9AE4173854ABB53EAA276FD870243;90.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 36.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 59.
  ) 
 Here is how much of TeX's memory you used:
- 7609 strings out of 493014
- 113929 string characters out of 6133351
+ 7642 strings out of 493014
+ 114360 string characters out of 6133351
  207033 words of memory out of 5000000
- 11073 multiletter control sequences out of 15000+600000
- 11789 words of font info for 46 fonts, out of 8000000 for 9000
+ 11097 multiletter control sequences out of 15000+600000
+ 12435 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,6n,38p,632b,322s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,6n,39p,696b,395s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb>
 </usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
@@ -469,11 +476,12 @@ Here is how much of TeX's memory you used:
 sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
 /local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/l
 ocal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/loca
-l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on 2DprojectSW_F06_T06_Q3.pdf (1 page, 81988 bytes).
+l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
+/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on 2DprojectSW_F06_T06_Q3.pdf (3 pages, 215864 bytes).
 PDF statistics:
- 54 PDF objects out of 1000 (max. 8388607)
- 42 compressed objects within 1 object stream
- 4 named destinations out of 1000 (max. 500000)
- 17 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 78 PDF objects out of 1000 (max. 8388607)
+ 57 compressed objects within 1 object stream
+ 9 named destinations out of 1000 (max. 500000)
+ 32 words of extra memory for PDF output out of 10000 (max. 10000000)
 
