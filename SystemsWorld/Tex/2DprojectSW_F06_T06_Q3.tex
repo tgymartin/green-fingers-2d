@@ -18,7 +18,15 @@
 	\maketitle
 	
 	\section{Part (a)}
-	Our objective here is not only to maximise the number of zero coefficients $k_i$'s, but also to have an appropriate minimal chi-square value of the corresponding order controller. In other words, we are required to bring about a balance between these two objectives and present the optimised trade-off in the equation. \\
+	The $\chi^2$ goodness of fit test will be used as a continuation of Question 2.
+	To formulate this as an optimisation problem, the objective would be to:
+	\begin{enumerate}
+		\item Maximise the number of zero coefficients $k_i$'s,
+		\item Minimise the $\chi^2$ value of the $n$\textsuperscript{th} order controller.
+	\end{enumerate}
+	In other words, as two conflicting objective functions will have to be optimised, a compromise has to be found based on a maximum predetermined value of $\chi^2$. This value of $\chi^2$ will correspond to a significance level $\alpha$ that is acceptable for the goodness of fit, where $\alpha = P($Reject $H_0|H_0$ is true$)$
+	
+	probability of rejecting the null hypothesis, given that it is true
 	
 	In order to minimise the number of non-zero coefficients $k_i$'s, we introduce a binary switch $x_i$. \\
 	
