@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.26)  13 APR 2017 16:37
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2017.3.26)  15 APR 2017 13:53
 entering extended mode
 **./final_report.tex
 (final_report.tex
@@ -461,39 +461,23 @@ LaTeX Info: Redefining \nameref on input line 14.
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-LaTeX Font Info:    Try loading font information for U+msa on input line 16.
+LaTeX Font Info:    Try loading font information for U+msa on input line 17.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 16.
+LaTeX Font Info:    Try loading font information for U+msb on input line 17.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 16.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\lambda' on input line 16.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 16.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 16.
-
 <methodology.png, id=32, 475.0548pt x 319.9152pt>
 File: methodology.png Graphic file (type png)
  <use methodology.png>
-Package pdftex.def Info: methodology.png used on input line 32.
+Package pdftex.def Info: methodology.png used on input line 29.
 (pdftex.def)             Requested size: 258.0pt x 173.75233pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 32--33
+Overfull \hbox (6.0pt too wide) in paragraph at lines 29--30
  [] 
  []
 
@@ -501,10 +485,10 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 32--33
 File: graph_lambdaBottle.png Graphic file (type png)
 
 <use graph_lambdaBottle.png>
-Package pdftex.def Info: graph_lambdaBottle.png used on input line 55.
+Package pdftex.def Info: graph_lambdaBottle.png used on input line 48.
 (pdftex.def)             Requested size: 258.0pt x 153.78395pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 55--56
+Overfull \hbox (6.0pt too wide) in paragraph at lines 48--49
  [] 
  []
 
@@ -512,91 +496,129 @@ Overfull \hbox (6.0pt too wide) in paragraph at lines 55--56
 
 
  <./methodology.png> <./graph_lambdaBottle.png>]
+Underfull \hbox (badness 3396) in paragraph at lines 74--75
+[]\OT1/ptm/m/n/10 Using the value of $\OML/cmm/m/it/10 []$ \OT1/ptm/m/n/10 and
+ the di-men-sions
+ []
+
+
+Underfull \hbox (badness 2426) in paragraph at lines 74--75
+\OT1/ptm/m/n/10 of the al-gae bot-tle, we are able to find the ther-mal
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 74--75
+\OT1/ptm/m/n/10 con-duc-tiv-ity $\OML/cmm/m/it/10 k$ \OT1/ptm/m/n/10 of the pol
+ystyrene [[]3[]] al-gae bot-tle.
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 74--75
 
  []
 
-<heat_exchanger_side.png, id=73, 1003.75pt x 1003.75pt>
+
+Underfull \hbox (badness 7168) in paragraph at lines 76--77
+[]\OT1/ptm/m/n/10 Based on re-search [[]6[]], the con-duc-tiv-ity of (non-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--79
+
+ []
+
+<heat_exchanger_side.png, id=76, 1003.75pt x 1003.75pt>
 File: heat_exchanger_side.png Graphic file (type png)
 
 <use heat_exchanger_side.png>
-Package pdftex.def Info: heat_exchanger_side.png used on input line 79.
-(pdftex.def)             Requested size: 154.80157pt x 154.79852pt.
+Package pdftex.def Info: heat_exchanger_side.png used on input line 83.
+(pdftex.def)             Requested size: 129.0pt x 128.9911pt.
 
-<heat_exchanger_top.png, id=75, 1003.75pt x 514.92375pt>
+<heat_exchanger_top.png, id=78, 1003.75pt x 514.92375pt>
 File: heat_exchanger_top.png Graphic file (type png)
 
 <use heat_exchanger_top.png>
-Package pdftex.def Info: heat_exchanger_top.png used on input line 89.
+Package pdftex.def Info: heat_exchanger_top.png used on input line 91.
 (pdftex.def)             Requested size: 154.80157pt x 79.41164pt.
- <air_gaps.jpeg, id=77, 913.91437pt x 563.10374pt>
+ <air_gaps.jpeg, id=80, 913.91437pt x 563.10374pt>
 File: air_gaps.jpeg Graphic file (type jpg)
 
 <use air_gaps.jpeg>
-Package pdftex.def Info: air_gaps.jpeg used on input line 97.
-(pdftex.def)             Requested size: 180.60315pt x 111.27835pt.
- <image_heatExchanger.jpg, id=79, 1362.691pt x 930.677pt>
+Package pdftex.def Info: air_gaps.jpeg used on input line 99.
+(pdftex.def)             Requested size: 129.0pt x 79.4784pt.
+ <image_heatExchanger.jpg, id=82, 1362.691pt x 930.677pt>
 File: image_heatExchanger.jpg Graphic file (type jpg)
 
 <use image_heatExchanger.jpg>
-Package pdftex.def Info: image_heatExchanger.jpg used on input line 105.
-(pdftex.def)             Requested size: 232.19843pt x 158.58221pt.
+Package pdftex.def Info: image_heatExchanger.jpg used on input line 107.
+(pdftex.def)             Requested size: 154.80157pt x 105.712pt.
 
-<demo_setup.png, id=80, 1152.2247pt x 452.1693pt>
+<demo_setup.png, id=83, 1152.2247pt x 452.1693pt>
 File: demo_setup.png Graphic file (type png)
  <use demo_setup.png>
-Package pdftex.def Info: demo_setup.png used on input line 114.
+Package pdftex.def Info: demo_setup.png used on input line 116.
 (pdftex.def)             Requested size: 206.39685pt x 80.99368pt.
- [2 <./heat_exchanger_side.png (PNG copy)> <./heat_exchanger_top.png> <./air_ga
-ps.jpeg> <./image_heatExchanger.jpg> <./demo_setup.png>]
-<graph_actualWcvAgainstVoltage.png, id=95, 717.34666pt x 402.83833pt>
+ [2 <./heat_exchanger_side.png> <./heat_exchanger_top.png> <./air_gaps.jpeg> <.
+/image_heatExchanger.jpg> <./demo_setup.png>]
+<graph_Wcv.png, id=105, 692.5875pt x 426.25917pt>
+File: graph_Wcv.png Graphic file (type png)
+ <use graph_Wcv.png>
+Package pdftex.def Info: graph_Wcv.png used on input line 146.
+(pdftex.def)             Requested size: 232.19843pt x 142.9099pt.
+
+<graph_actualWcvAgainstVoltage.png, id=108, 717.34666pt x 402.83833pt>
 File: graph_actualWcvAgainstVoltage.png Graphic file (type png)
 
 <use graph_actualWcvAgainstVoltage.png>
 Package pdftex.def Info: graph_actualWcvAgainstVoltage.png used on input line 1
-49.
+56.
 (pdftex.def)             Requested size: 258.0pt x 144.88031pt.
 
-Overfull \hbox (6.0pt too wide) in paragraph at lines 149--150
+Overfull \hbox (6.0pt too wide) in paragraph at lines 156--157
  [] 
  []
 
 (final_report.bbl)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 165.
- [3 <./graph_actualWcvAgainstVoltage.png>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 165.
- (final_report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 165.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 165.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 168.
+ [3 <./graph_Wcv.png> <./graph_actualWcvAgainstVoltage.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 168.
+
+(final_report.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 168.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 168.
 Package rerunfilecheck Info: File `final_report.out' has not changed.
-(rerunfilecheck)             Checksum: 7DD83319D9DA93FB2037503E31EA5FA5;379.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 165.
+(rerunfilecheck)             Checksum: 1B409428E1E41FDAC301D5B50336E924;398.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 168.
  ) 
 Here is how much of TeX's memory you used:
- 8122 strings out of 493333
- 125600 string characters out of 3139191
- 224444 words of memory out of 3000000
- 11524 multiletter control sequences out of 15000+200000
+ 8138 strings out of 493333
+ 125835 string characters out of 3139191
+ 225444 words of memory out of 3000000
+ 11535 multiletter control sequences out of 15000+200000
  38733 words of font info for 88 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,7n,39p,538b,390s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 36i,10n,39p,538b,390s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9
 /fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
 ic/amsfonts/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfon
 ts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmm
-i9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C
-:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program 
-Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
-1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
-amsfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/
-utmr8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on final_report.pdf (3 pages, 5035744 bytes).
+i8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi9.pfb><C
+:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Program
+ Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmr9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pf
+b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Progra
+m Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files/MiKTeX 2.
+9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on final_report.pdf (3 pages, 5438915 bytes).
 PDF statistics:
- 170 PDF objects out of 1000 (max. 8388607)
- 31 named destinations out of 1000 (max. 500000)
- 97 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 200 PDF objects out of 1000 (max. 8388607)
+ 35 named destinations out of 1000 (max. 500000)
+ 102 words of extra memory for PDF output out of 10000 (max. 10000000)
 
